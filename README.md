@@ -1,70 +1,162 @@
-Front-End Development Completed ✅
+# Cloud Resume Challenge
 
-Completion Date: 02 August 2026 - 14:32
+## Project Overview
 
-The front-end portion of my Cloud Resume Challenge project has been completed.
+This repository documents my implementation of the Cloud Resume Challenge, a hands-on project designed to develop practical cloud engineering skills by building and deploying a serverless resume website on AWS.
 
-The development process focused on building the project iteratively, developing each component step-by-step rather than attempting to create the entire solution at once.
+The project combines front-end development, cloud infrastructure, serverless computing, security, version control, and automation to demonstrate real-world cloud concepts.
 
-Development Approach
-Used ChatGPT as a learning assistant and guide throughout the creation of the front-end portion of the Cloud Resume Challenge project.
-Followed an iterative development approach by:
-Building each section progressively.
-Reviewing the implementation.
-Testing functionality.
-Identifying issues.
-Making improvements and corrections as required.
-Focused on understanding the purpose and relationship between the core front-end technologies:
-HTML – Used for website structure, semantic content, and organising the resume information.
-CSS – Used for styling, presentation, and improving the user experience.
-JavaScript – Added as the foundation for future interactivity and functionality.
-Front-End Implementation Completed
-Created a professional resume website using semantic HTML.
-Developed sections covering:
-Professional summary.
-Technical skills.
-Professional experience.
-Cloud projects.
-Education.
-Certifications.
-Additional information.
-Created a structured project layout:
-cloud-resume-challenge
+---
 
-├── index.html        # Website structure and content
+# Project Progress
+
+* ✅ HTML Resume
+* ✅ CSS Styling
+* ✅ JavaScript Foundation
+* ✅ GitHub Repository
+* ✅ GitHub Pages Deployment
+* ⏳ Amazon S3 Static Website Hosting
+* ⏳ Amazon CloudFront Distribution
+* ⏳ HTTPS with AWS Certificate Manager (ACM)
+* ⏳ Amazon API Gateway
+* ⏳ AWS Lambda
+* ⏳ Amazon DynamoDB Visitor Counter
+* ⏳ IAM Security Configuration
+* ⏳ CI/CD Automation
+* ⏳ Infrastructure as Code (Terraform)
+
+---
+
+# Front-End Development Completed ✅
+
+**Completion Date:** 02 August 2026
+
+The front-end portion of the Cloud Resume Challenge has been successfully completed.
+
+The project was developed using an iterative approach, focusing on understanding each technology before moving to the next. Each component was built, tested, reviewed, and refined throughout the development process.
+
+---
+
+# Development Approach
+
+This project was completed using a practical, hands-on learning methodology supported by official documentation, experimentation, testing, and AI-assisted guidance to better understand each implementation step.
+
+The development process followed these stages:
+
+1. Build one feature at a time.
+2. Test functionality.
+3. Review the implementation.
+4. Troubleshoot and resolve issues.
+5. Refactor where improvements were identified.
+6. Commit working changes using Git.
+
+The primary goal was to understand *why* each component was implemented rather than simply producing a finished website.
+
+---
+
+# Technologies Used
+
+## HTML
+
+* Built a semantic and accessible resume website.
+* Structured content using appropriate HTML elements.
+* Organised professional experience, education, certifications, and projects.
+
+## CSS
+
+* Applied responsive styling.
+* Improved layout and readability.
+* Separated presentation from content.
+
+## JavaScript
+
+* Created the foundation for future interactivity.
+* Prepared the application for integration with AWS serverless services.
+* Organised client-side functionality into a dedicated JavaScript file.
+
+---
+
+# Project Structure
+
+```text
+cloud-resume-challenge/
+│
+├── index.html          # Website structure
 ├── css/
-│   └── style.css     # Website styling
+│   └── style.css       # Styling
 ├── js/
-│   └── script.js     # JavaScript functionality
-└── README.md         # Project documentation
-Learned the importance of organising files correctly and maintaining a clean project structure.
-Connected external CSS and JavaScript files correctly within the HTML document.
-Tested the website deployment using GitHub Pages to confirm the front-end functions correctly.
-Version Control & Problem Solving
-Practiced using Git and GitHub for version control by:
-Creating commits.
-Tracking changes.
-Correcting issues.
-Maintaining a structured repository.
-Developed troubleshooting skills by resolving issues related to:
-File organisation.
-Folder structures.
-Git tracking.
-Asset linking.
-Repository updates.
-Focused on understanding the reasoning behind each step instead of only completing tasks, improving confidence in problem-solving and technical decision-making.
-Next Steps: Cloud Implementation ☁️
+│   └── script.js       # JavaScript functionality
+└── README.md           # Project documentation
+```
 
-Before moving into the cloud portion of the challenge, I will review and validate the completed front-end implementation to ensure the foundation is stable.
+---
 
-The next phase will focus on implementing the AWS cloud architecture, including:
+# Git & Version Control
 
-Hosting the website using Amazon S3.
-Configuring Amazon CloudFront for content delivery and HTTPS.
-Implementing the visitor counter functionality using:
-JavaScript API integration.
-Amazon API Gateway.
-AWS Lambda.
-Amazon DynamoDB.
-Reviewing IAM roles and permissions using least-privilege principles.
-Continuing to document the implementation process, challenges encountered, and lessons learned.
+Throughout development I used Git and GitHub to:
+
+* Track project changes.
+* Create meaningful commits.
+* Maintain version history.
+* Correct implementation mistakes.
+* Safely update the project.
+
+---
+
+# Challenges & Problem Solving
+
+During development I encountered and resolved several common front-end issues, including:
+
+* File and folder organisation.
+* Incorrect asset paths.
+* CSS and JavaScript linking.
+* Git tracking and repository updates.
+* GitHub Pages deployment validation.
+
+Resolving these issues improved my troubleshooting skills and reinforced the importance of incremental development.
+
+---
+
+# Key Lessons Learned
+
+This stage of the project strengthened my understanding of:
+
+* Semantic HTML and accessibility.
+* Separation of HTML, CSS, and JavaScript.
+* Clean project organisation.
+* Git version control workflows.
+* Incremental development and debugging.
+* The value of testing throughout the development process.
+
+---
+
+# Current Status
+
+The front-end has been successfully deployed using GitHub Pages and serves as the foundation for the AWS implementation.
+
+---
+
+# Next Phase – AWS Cloud Implementation ☁️
+
+The next stage of the project will focus on migrating the application to AWS and implementing a fully serverless architecture.
+
+Planned services include:
+
+* Amazon S3 for static website hosting.
+* Amazon CloudFront for global content delivery and HTTPS.
+* AWS Certificate Manager (ACM) for SSL/TLS certificates.
+* Amazon API Gateway to expose a REST API.
+* AWS Lambda for serverless application logic.
+* Amazon DynamoDB to store visitor counts.
+* IAM roles and policies following least-privilege principles.
+* JavaScript integration with the API.
+* CI/CD automation.
+* Infrastructure as Code using Terraform.
+
+---
+
+# Learning Objective
+
+This project is focused on developing practical cloud engineering skills through hands-on implementation.
+
+Rather than simply completing the challenge, the objective is to understand the architecture, technologies, and design decisions behind each stage of the solution while building confidence in cloud infrastructure, automation, security, and problem solving.
