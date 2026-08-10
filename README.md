@@ -10,21 +10,23 @@ The project will combine front-end development, cloud infrastructure, serverless
 
 # Project Progress
 
-* ✅ HTML Resume
-* ✅ CSS Styling
-* ✅ JavaScript Foundation
-* ✅ GitHub Repository
-* ✅ GitHub Pages Deployment
-* ✅ Visitor Counter Front-End Preparation
-* ⏳ Amazon S3 Static Website Hosting
-* ⏳ Amazon CloudFront Distribution
-* ⏳ HTTPS with AWS Certificate Manager (ACM)
-* ⏳ Amazon API Gateway
-* ⏳ AWS Lambda
-* ⏳ Amazon DynamoDB Visitor Counter
-* ⏳ IAM Security Configuration
-* ⏳ CI/CD Automation
-* ⏳ Infrastructure as Code (Terraform)
+- ✅ HTML Resume
+- ✅ CSS Styling
+- ✅ JavaScript Foundation
+- ✅ GitHub Repository
+- ✅ GitHub Pages Deployment
+- ✅ Visitor Counter Front-End Preparation
+- 🔄 AWS Cloud Implementation Started
+- 🔄 AWS CloudFormation Infrastructure Template
+- ⏳ Amazon S3 Static Website Hosting
+- ⏳ Amazon CloudFront Distribution
+- ⏳ HTTPS with AWS Certificate Manager (ACM)
+- ⏳ Amazon API Gateway
+- ⏳ AWS Lambda
+- ⏳ Amazon DynamoDB Visitor Counter
+- ⏳ IAM Security Configuration
+- ⏳ CI/CD Automation
+- ⏳ Infrastructure as Code (Terraform)
 
 ---
 
@@ -61,22 +63,22 @@ The primary goal was to understand *why* each component was implemented rather t
 
 ## HTML
 
-* Built a semantic and accessible resume website.
-* Structured professional experience, education, certifications, and projects.
-* Added the visitor-counter interface.
+- Built a semantic and accessible resume website.
+- Structured professional experience, education, certifications, and projects.
+- Added the visitor-counter interface.
 
 ## CSS
 
-* Applied responsive styling.
-* Improved layout and readability.
-* Separated presentation from content.
+- Applied responsive styling.
+- Improved layout and readability.
+- Separated presentation from content.
 
 ## JavaScript
 
-* Created the foundation for future interactivity.
-* Organised client-side functionality into a dedicated JavaScript file.
-* Prepared the visitor-counter interface for future API integration.
-* Prepared the application for integration with AWS serverless services.
+- Created the foundation for future interactivity.
+- Organised client-side functionality into a dedicated JavaScript file.
+- Prepared the visitor-counter interface for future API integration.
+- Prepared the application for integration with AWS serverless services.
 
 ---
 
@@ -85,12 +87,17 @@ The primary goal was to understand *why* each component was implemented rather t
 ```text
 cloud-resume-challenge/
 │
-├── index.html          # Website structure
+├── AWS/
+│   ├── playbooks/
+│   ├── README.md
+│   └── template.yaml
+│
+├── index.html
 ├── css/
-│   └── style.css       # Styling
+│   └── style.css
 ├── js/
-│   └── script.js       # JavaScript functionality
-└── README.md           # Project documentation
+│   └── script.js
+└── README.md
 ```
 
 ---
@@ -99,12 +106,12 @@ cloud-resume-challenge/
 
 Throughout development I used Git and GitHub to:
 
-* Track project changes.
-* Create meaningful commits.
-* Maintain version history.
-* Correct implementation mistakes.
-* Safely update the project.
-* Manage the project incrementally throughout development.
+- Track project changes.
+- Create meaningful commits.
+- Maintain version history.
+- Correct implementation mistakes.
+- Safely update the project.
+- Manage the project incrementally throughout development.
 
 ---
 
@@ -112,12 +119,12 @@ Throughout development I used Git and GitHub to:
 
 During development I encountered and resolved several common front-end and version-control issues, including:
 
-* File and folder organisation.
-* Incorrect CSS and JavaScript asset paths.
-* CSS and JavaScript linking.
-* Git tracking and repository updates.
-* GitHub Pages deployment validation.
-* Preparing the front end for future API integration.
+- File and folder organisation.
+- Incorrect CSS and JavaScript asset paths.
+- CSS and JavaScript linking.
+- Git tracking and repository updates.
+- GitHub Pages deployment validation.
+- Preparing the front end for future API integration.
 
 Resolving these issues improved my troubleshooting skills and reinforced the importance of incremental development.
 
@@ -127,17 +134,17 @@ Resolving these issues improved my troubleshooting skills and reinforced the imp
 
 This stage of the project strengthened my understanding of:
 
-* Semantic HTML and accessibility.
-* Separation of HTML, CSS, and JavaScript.
-* Clean project organisation.
-* Git version control workflows.
-* Incremental development and debugging.
-* Preparing front-end applications for cloud integration.
-* The importance of testing throughout the development process.
+- Semantic HTML and accessibility.
+- Separation of HTML, CSS, and JavaScript.
+- Clean project organisation.
+- Git version control workflows.
+- Incremental development and debugging.
+- Preparing front-end applications for cloud integration.
+- The importance of testing throughout the development process.
 
 ---
 
-# Cloud Resume Challenge
+# Cloud Resume Challenge Architecture
 
 The resume website is being developed as a serverless cloud project.
 
@@ -167,9 +174,36 @@ AWS Lambda
 Amazon DynamoDB
 ```
 
-The visitor counter will eventually use JavaScript to communicate with an API exposed through Amazon API Gateway. AWS Lambda will process the request and interact with Amazon DynamoDB to retrieve and update the visitor count.
+The visitor counter will eventually use JavaScript to communicate with an API exposed through Amazon API Gateway.
+
+AWS Lambda will process the request and interact with Amazon DynamoDB to retrieve and update the visitor count.
 
 The AWS backend has not yet been deployed. The current project contains the front-end foundation required for this integration.
+
+---
+
+# AWS Infrastructure Development ☁️
+
+**Status:** In Progress
+
+The AWS implementation phase of the Cloud Resume Challenge has now started.
+
+The project is being developed incrementally, following a hands-on approach where each AWS component is implemented, tested, and documented before progressing to the next stage.
+
+The initial infrastructure work is being defined using AWS CloudFormation.
+
+## Initial AWS Infrastructure
+
+The first CloudFormation template is being developed to provision the Amazon S3 bucket that will be used to host the static resume website.
+
+The initial template includes:
+
+- AWS CloudFormation template definition.
+- A configurable S3 bucket name parameter.
+- An Amazon S3 bucket resource.
+- CloudFormation intrinsic function usage with `!Ref`.
+
+The infrastructure will be expanded as the project progresses to include additional AWS services.
 
 ---
 
@@ -179,33 +213,34 @@ The front-end has been successfully developed and deployed using GitHub Pages.
 
 The project currently includes:
 
-* A responsive HTML resume.
-* CSS styling.
-* JavaScript foundation.
-* Git and GitHub version control.
-* A prepared visitor-counter interface.
-* Documentation of the planned AWS architecture.
+- A responsive HTML resume.
+- CSS styling.
+- JavaScript foundation.
+- Git and GitHub version control.
+- A prepared visitor-counter interface.
+- AWS CloudFormation infrastructure development.
+- Documentation of the planned AWS architecture.
 
-The next stage is to begin implementing the AWS cloud infrastructure.
+The next stage is to deploy and test the S3 infrastructure.
 
 ---
 
 # Next Phase – AWS Cloud Implementation ☁️
 
-The next stage of the project will focus on migrating the application to AWS and implementing the serverless architecture.
+The next stage of the project will focus on deploying the application to AWS and implementing the serverless architecture.
 
 Planned services include:
 
-* Amazon S3 for static website hosting.
-* Amazon CloudFront for content delivery.
-* AWS Certificate Manager (ACM) for SSL/TLS certificates.
-* Amazon API Gateway to expose the visitor-counter API.
-* AWS Lambda for serverless application logic.
-* Amazon DynamoDB to store and update visitor counts.
-* IAM roles and policies following least-privilege principles.
-* JavaScript integration with the API.
-* CI/CD automation.
-* Infrastructure as Code using Terraform.
+- Amazon S3 for static website hosting.
+- Amazon CloudFront for content delivery.
+- AWS Certificate Manager (ACM) for SSL/TLS certificates.
+- Amazon API Gateway to expose the visitor-counter API.
+- AWS Lambda for serverless application logic.
+- Amazon DynamoDB to store and update visitor counts.
+- IAM roles and policies following least-privilege principles.
+- JavaScript integration with the API.
+- CI/CD automation.
+- Infrastructure as Code using Terraform.
 
 Each AWS component will be implemented, tested, and documented as the project progresses.
 
@@ -219,14 +254,14 @@ Rather than simply completing the challenge, the objective is to understand the 
 
 The project is intended to build practical experience in:
 
-* Cloud infrastructure.
-* Serverless architecture.
-* AWS services.
-* API development.
-* Security and IAM.
-* Version control.
-* Automation.
-* Infrastructure as Code.
-* Troubleshooting and problem solving.
+- Cloud infrastructure.
+- Serverless architecture.
+- AWS services.
+- API development.
+- Security and IAM.
+- Version control.
+- Automation.
+- Infrastructure as Code.
+- Troubleshooting and problem solving.
 
 The project will continue to evolve as additional AWS services and automation are implemented.
