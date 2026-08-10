@@ -142,6 +142,60 @@ This stage of the project strengthened my understanding of:
 - Preparing front-end applications for cloud integration.
 - The importance of testing throughout the development process.
 
+## AWS CLI Authentication Troubleshooting
+
+During the AWS setup for the Cloud Resume Challenge, I encountered the following error when testing the AWS CLI:
+
+```text
+InvalidClientTokenId
+The security token included in the request is invalid
+```
+
+### Troubleshooting steps
+
+I verified the following:
+
+* AWS access key and secret access key were correct.
+* The original unused access key was deactivated and removed.
+* A new AWS CLI access key was created.
+* The new access key was confirmed as **Active** in IAM.
+* AWS CLI was correctly reading the new access key.
+* No `AWS_*` environment variables were overriding the credentials.
+* No `AWS_SESSION_TOKEN` was configured.
+* No proxy or custom AWS endpoint variables were configured.
+* The AWS CLI configuration contained the correct default region:
+  `af-south-1`
+* The AWS CLI version was:
+  `AWS CLI 2.36.19`
+* The system clock was correctly synchronized; Ubuntu was displaying UTC, which is normal.
+
+### Root Cause
+
+The AWS Region **Africa (Cape Town) — `af-south-1`** had not yet been enabled for the AWS account.
+
+Although the credentials were valid, AWS CLI requests targeting the Cape Town region were failing with:
+
+```text
+InvalidClientTokenId
+The security token included in the request is invalid
+```
+
+I enabled **Africa (Cape Town) / `af-south-1`** in the AWS account's Region settings.
+
+After enabling the region, the following command successfully authenticated:
+
+```bash
+aws sts get-caller-identity --region af-south-1
+```
+
+### Lesson Learned
+
+AWS credentials can be valid while requests to a specific AWS Region still fail if that Region has not been enabled for the account.
+
+Before troubleshooting or rotating credentials repeatedly, verify that the target AWS Region is enabled.
+
+This was a useful practical lesson in AWS IAM authentication, regional services, AWS CLI configuration, and troubleshooting.
+
 ---
 
 # Cloud Resume Challenge Architecture
