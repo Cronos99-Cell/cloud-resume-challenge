@@ -4,7 +4,7 @@
 
 This repository documents my implementation of the Cloud Resume Challenge, a hands-on project designed to develop practical cloud engineering skills by building and deploying a serverless resume website on AWS.
 
-The project combines front-end development, cloud infrastructure, serverless computing, security, version control, and automation to demonstrate practical cloud engineering concepts.
+The project will combine front-end development, cloud infrastructure, serverless computing, security, version control, and automation to demonstrate practical cloud engineering concepts.
 
 ---
 
