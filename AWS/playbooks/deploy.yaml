@@ -1,0 +1,16 @@
+---
+- name: Deploy Cloud Resume CloudFormation Infrastructure
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+
+    - name: Deploy CloudFormation stack
+      amazon.aws.cloudformation:
+        stack_name: cloud-resume
+        state: present
+        region: af-south-1
+        template_body: "{{ lookup('file', '../template.yaml') }}"
+        template_parameters:
+          BucketName: "YOUR-BUCKET-NAME"
