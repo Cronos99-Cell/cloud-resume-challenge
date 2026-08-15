@@ -9,7 +9,21 @@ document.addEventListener("DOMContentLoaded", () => {
 
     visitorCount.textContent = "Loading...";
 
-    // AWS API Gateway endpoint will be added here
-    // when we build the Lambda and DynamoDB backend.
+    const apiUrl =
+        "https://yfsnyqf9rg.execute-api.af-south-1.amazonaws.com/default/CloudResumeVisitorCounter";
 
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            visitorCount.textContent = data.count;
+        })
+        .catch(error => {
+            console.error("Visitor counter error:", error);
+            visitorCount.textContent = "Unable to load";
+        });
 });
