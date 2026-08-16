@@ -1,16 +1,111 @@
-# Cloud Resume Challenge
+# Cloud Resume Challenge ☁️
 
-## Project Overview
+A production-style serverless resume website built on AWS to demonstrate practical cloud engineering, serverless architecture, Infrastructure as Code, security, API integration, Git/GitHub, and troubleshooting skills.
 
-This repository documents my implementation of the Cloud Resume Challenge, a hands-on project designed to develop practical cloud engineering skills by building and deploying a serverless resume website on AWS.
+## 🚀 Live Project
 
-The project combines front-end development, cloud infrastructure, serverless computing, security, version control, troubleshooting, API integration, and automation to demonstrate practical cloud engineering concepts.
+**Live Resume:**
+https://d2kecljl2gk63a.cloudfront.net
 
-The project is being developed incrementally, with each component implemented, tested, documented, and reviewed before progressing to the next stage.
+**GitHub Repository:**
+https://github.com/Cronos99-Cell/cloud-resume-challenge
+
+The live resume is delivered through **Amazon CloudFront** and hosted using a private **Amazon S3** bucket. A serverless visitor counter is implemented using **Amazon API Gateway, AWS Lambda, and Amazon DynamoDB**.
 
 ---
 
-# Project Progress
+# Architecture
+
+```text
+                         Internet
+                            │
+                            ▼
+                    Amazon CloudFront
+                            │
+                    Private S3 Access
+                            │
+                            ▼
+                    Amazon S3 Bucket
+                            │
+                            ▼
+                    Static Resume
+                  ┌─────────┴─────────┐
+                  │                   │
+             style.css          script.js
+                                      │
+                                      │ fetch()
+                                      ▼
+                             Amazon API Gateway
+                                      │
+                                      ▼
+                                AWS Lambda
+                                      │
+                                      ▼
+                              Amazon DynamoDB
+                                      │
+                                      ▼
+                              Visitor Count
+```
+
+### Request Flow
+
+```text
+Visitor
+   │
+   ▼
+CloudFront
+   │
+   ▼
+Private S3
+   │
+   ▼
+Resume JavaScript
+   │
+   │ API request
+   ▼
+API Gateway
+   │
+   ▼
+Lambda
+   │
+   ▼
+DynamoDB
+   │
+   ▼
+Visitor Count
+   │
+   ▼
+API Gateway
+   │
+   ▼
+Resume
+```
+
+The architecture separates the static frontend from the serverless backend while keeping the S3 bucket private.
+
+---
+
+# Project Overview
+
+The Cloud Resume Challenge is a hands-on cloud engineering project designed to move beyond theoretical cloud knowledge and demonstrate practical implementation.
+
+The project started as a static HTML/CSS/JavaScript resume and was progressively transformed into a serverless AWS application.
+
+The development process focuses on:
+
+* Building each component incrementally.
+* Understanding the purpose of each AWS service.
+* Testing individual components before integration.
+* Troubleshooting real implementation problems.
+* Using Git for version control.
+* Documenting architecture and design decisions.
+* Progressively improving security and automation.
+
+The goal is not simply to produce a working website, but to understand the architecture and engineering decisions behind it.
+
+---
+
+# Project Status
 
 | Status | Milestone                                       | Date           |
 | ------ | ----------------------------------------------- | -------------- |
@@ -19,89 +114,55 @@ The project is being developed incrementally, with each component implemented, t
 | ✅      | JavaScript Foundation                           | 02 August 2026 |
 | ✅      | GitHub Repository                               | Completed      |
 | ✅      | GitHub Pages Deployment                         | Completed      |
-| ✅      | Visitor Counter Front-End Preparation           | 02 August 2026 |
+| ✅      | Visitor Counter Frontend                        | 02 August 2026 |
 | ✅      | AWS CLI Authentication & Region Troubleshooting | 15 August 2026 |
-| ✅      | Amazon S3 Bucket Created                        | 15 August 2026 |
-| ✅      | Resume Files Deployed to S3                     | 15 August 2026 |
-| ✅      | Amazon CloudFront Distribution                  | 15 August 2026 |
-| ✅      | CloudFront Default Root Object (`index.html`)   | 15 August 2026 |
-| ✅      | Private S3 Access Through CloudFront            | 15 August 2026 |
-| 🔄     | AWS CloudFormation Infrastructure               | In Progress    |
+| ✅      | Amazon S3 Deployment                            | 15 August 2026 |
+| ✅      | Amazon CloudFront                               | 15 August 2026 |
+| ✅      | Private S3 Access                               | 15 August 2026 |
 | ✅      | Amazon API Gateway                              | 15 August 2026 |
-| ✅      | AWS Lambda Visitor Counter                      | 15 August 2026 |
-| ✅      | Amazon DynamoDB Visitor Counter                 | 15 August 2026 |
+| ✅      | AWS Lambda                                      | 15 August 2026 |
+| ✅      | Amazon DynamoDB                                 | 15 August 2026 |
 | ✅      | JavaScript API Integration                      | 15 August 2026 |
-| ✅      | API Gateway CORS Configuration                  | 15 August 2026 |
+| ✅      | API Gateway CORS                                | 15 August 2026 |
 | ✅      | End-to-End Visitor Counter                      | 15 August 2026 |
-| ⏳      | IAM Least-Privilege Review                      | Remaining      |
-| ⏳      | Custom Domain / DNS                             | Remaining      |
-| ⏳      | AWS Certificate Manager (ACM)                   | Remaining      |
-| ⏳      | CI/CD Automation                                | Remaining      |
-| ⏳      | Infrastructure as Code — Terraform              | Remaining      |
+| 🔄     | CloudFormation Infrastructure                   | In Progress    |
+| 🔄     | IAM Least-Privilege Review                      | In Progress    |
+| ⏳      | Custom Domain / DNS                             | Planned        |
+| ⏳      | AWS Certificate Manager                         | Planned        |
+| ⏳      | GitHub Actions CI/CD                            | Planned        |
+| ⏳      | Terraform Infrastructure                        | Planned        |
 
 ---
 
-# Front-End Development Completed ✅
+# Core Technologies
 
-**Completion Date:** 02 August 2026
+### Frontend
 
-The front-end portion of the Cloud Resume Challenge was successfully completed.
+* HTML5
+* CSS3
+* JavaScript
+* Responsive web design
 
-The project was developed using an iterative approach, focusing on understanding each technology before moving to the next.
+### AWS
 
-The resume includes:
+* Amazon S3
+* Amazon CloudFront
+* Amazon API Gateway
+* AWS Lambda
+* Amazon DynamoDB
+* AWS IAM
+* AWS CloudFormation
+* AWS CLI
+* AWS Certificate Manager — planned
+* Amazon Route 53 — planned
 
-* Professional Summary
-* Technical Skills
-* Professional Experience
-* Education
-* Certifications
-* Cloud Projects
-* AWS Visitor Counter
+### DevOps / Infrastructure
 
-The visitor-counter interface was initially prepared on 02 August 2026 and was subsequently connected to the AWS serverless backend on 15 August 2026.
-
----
-
-# Development Approach
-
-This project is being completed using a practical, hands-on learning methodology supported by official documentation, experimentation, testing, troubleshooting, and AI-assisted guidance to better understand each implementation step.
-
-The development process follows these stages:
-
-1. Build one feature at a time.
-2. Test functionality.
-3. Review the implementation.
-4. Troubleshoot and resolve issues.
-5. Refactor where improvements are identified.
-6. Commit working changes using Git.
-7. Document important implementation decisions and lessons learned.
-
-The primary goal is to understand *why* each component is implemented rather than simply producing a finished website.
-
----
-
-# Technologies Used
-
-## HTML
-
-* Built a semantic and accessible resume website.
-* Structured professional experience, education, certifications, and projects.
-* Added the visitor-counter interface.
-
-## CSS
-
-* Applied responsive styling.
-* Improved layout and readability.
-* Separated presentation from content.
-
-## JavaScript
-
-* Created the foundation for client-side functionality.
-* Organised client-side functionality into a dedicated JavaScript file.
-* Implemented the visitor-counter API request.
-* Connected the resume frontend to Amazon API Gateway.
-* Added handling for API responses and errors.
+* Git
+* GitHub
+* GitHub Actions — planned
+* CloudFormation
+* Terraform — planned
 
 ---
 
@@ -115,141 +176,56 @@ cloud-resume-challenge/
 │   ├── README.md
 │   └── template.yaml
 │
-├── index.html
 ├── css/
 │   └── style.css
+│
 ├── js/
 │   └── script.js
+│
+├── index.html
 └── README.md
 ```
 
 ---
 
-# Git & Version Control
+# Frontend Development
 
-Throughout development I used Git and GitHub to:
+## HTML
 
-* Track project changes.
-* Create meaningful commits.
-* Maintain version history.
-* Correct implementation mistakes.
-* Safely update the project.
-* Manage the project incrementally.
-* Maintain the project source code and AWS deployment configuration.
+The resume is structured using semantic HTML and contains:
 
-GitHub serves as the central source repository for the project.
+* Professional Summary
+* Technical Skills
+* Professional Experience
+* Education
+* Certifications
+* Cloud Projects
+* AWS Visitor Counter
 
-### Git Workflow
+## CSS
 
-```text
-Project Source
-      │
-      ▼
-    Git
-      │
-      ▼
-GitHub Repository
-      │
-      ├──────────────► GitHub Pages
-      │
-      ▼
-AWS Deployment
-      │
-      ▼
-S3 → CloudFront
-```
+CSS was used to:
 
-CI/CD automation will be added as a future stage of the project.
+* Create the resume layout.
+* Improve readability.
+* Provide responsive styling.
+* Separate presentation from HTML structure.
+
+## JavaScript
+
+JavaScript provides the client-side functionality required for the visitor counter.
+
+The frontend performs an API request using `fetch()` and updates the visitor-count element with the response returned by API Gateway.
+
+Error handling was also implemented so that API failures do not leave the page permanently displaying a loading state.
 
 ---
 
-# Challenges & Problem Solving
+# AWS Deployment
 
-During development I encountered and resolved several common front-end, Git, AWS CLI, and cloud infrastructure issues.
+## Amazon S3
 
-These included:
-
-* File and folder organisation.
-* Incorrect CSS and JavaScript asset paths.
-* CSS and JavaScript linking.
-* Git tracking and repository updates.
-* GitHub Pages deployment validation.
-* AWS CLI authentication problems.
-* AWS regional configuration.
-* S3 deployment.
-* CloudFront configuration.
-* Private S3 access through CloudFront.
-* API Gateway route configuration.
-* Lambda integration.
-* DynamoDB visitor-counter implementation.
-* Browser CORS restrictions.
-* Testing API responses independently from the frontend.
-
-Resolving these issues improved my troubleshooting skills and reinforced the importance of incremental development and testing each layer independently.
-
----
-
-# AWS CLI Authentication Troubleshooting
-
-During the AWS setup for the Cloud Resume Challenge, I encountered the following error when testing the AWS CLI:
-
-```text
-InvalidClientTokenId
-The security token included in the request is invalid
-```
-
-## Troubleshooting Steps
-
-I verified the following:
-
-* AWS access key and secret access key were correct.
-* The original unused access key was deactivated and removed.
-* A new AWS CLI access key was created.
-* The new access key was confirmed as **Active** in IAM.
-* AWS CLI was correctly reading the new access key.
-* No `AWS_*` environment variables were overriding the credentials.
-* No `AWS_SESSION_TOKEN` was configured.
-* No proxy or custom AWS endpoint variables were configured.
-* The AWS CLI configuration contained the correct default region: `af-south-1`.
-* The AWS CLI version was `AWS CLI 2.36.19`.
-* The system clock was correctly synchronized.
-
-## Root Cause
-
-The AWS account's **Africa (Cape Town) — `af-south-1`** region had not yet been enabled.
-
-Although the credentials were valid, AWS CLI requests targeting the Cape Town region were failing with:
-
-```text
-InvalidClientTokenId
-The security token included in the request is invalid
-```
-
-I enabled **Africa (Cape Town) / `af-south-1`** in the AWS account's Region settings.
-
-After enabling the region, the following command successfully authenticated:
-
-```bash
-aws sts get-caller-identity --region af-south-1
-```
-
-## Lesson Learned
-
-AWS credentials can be valid while requests to a specific AWS Region still fail if that Region has not been enabled for the account.
-
-Before repeatedly rotating credentials, verify the target AWS Region and AWS CLI configuration.
-
-This provided practical experience with AWS IAM authentication, regional configuration, AWS CLI troubleshooting, and cloud account configuration.
-
----
-
-# AWS Deployment Milestones ☁️
-
-## Milestone 1 — Amazon S3 Deployment
-
-**Completed:** 15 August 2026
-
-Created the S3 bucket:
+The resume files are deployed to:
 
 ```text
 cameron-cloud-resume-2026
@@ -261,12 +237,10 @@ Region:
 af-south-1
 ```
 
-The completed HTML, CSS, and JavaScript files were uploaded to S3.
-
-The deployed structure is:
+The bucket contains:
 
 ```text
-cameron-cloud-resume-2026
+cameron-cloud-resume-2026/
 │
 ├── index.html
 ├── css/
@@ -275,55 +249,57 @@ cameron-cloud-resume-2026
     └── script.js
 ```
 
-The S3 bucket remains private, with S3 Block Public Access enabled.
+### S3 Security
 
-Rather than exposing the S3 bucket directly to the internet, CloudFront is used as the public distribution layer.
+The S3 bucket is configured with **Block Public Access enabled**.
+
+S3 is therefore not being used as a publicly exposed website endpoint.
+
+Instead, CloudFront provides the public-facing delivery layer.
 
 ---
 
-## Milestone 2 — Amazon CloudFront
+# Amazon CloudFront
 
-**Completed:** 15 August 2026
+A CloudFront distribution was created to deliver the resume globally over HTTPS.
 
-Created an Amazon CloudFront distribution:
+Distribution:
 
 ```text
 cameron-cloud-resume
 ```
 
-CloudFront was configured with the private S3 bucket as its origin.
-
-Private S3 access was enabled so that CloudFront can retrieve objects from the bucket without requiring the S3 bucket itself to be publicly accessible.
-
-The CloudFront distribution was configured with:
+Default root object:
 
 ```text
-Default Root Object: index.html
+index.html
 ```
 
-### Current CloudFront Endpoint
+Current CloudFront endpoint:
 
 ```text
 https://d2kecljl2gk63a.cloudfront.net
 ```
 
-The AWS-generated CloudFront URL is currently being used for testing.
+CloudFront retrieves the website content from the private S3 origin.
 
-A custom domain will be configured at a later stage.
+A custom domain and ACM certificate are planned for a later stage.
 
 ---
 
-# Milestone 3 — Amazon API Gateway
+# Serverless Visitor Counter
 
-**Completed:** 15 August 2026
+The visitor counter demonstrates integration between the frontend and AWS serverless services.
 
-Created the API:
+## API Gateway
+
+API:
 
 ```text
 CloudResumeVisitorCounter-API
 ```
 
-API Gateway is configured with the route:
+Route:
 
 ```text
 ANY /CloudResumeVisitorCounter
@@ -335,45 +311,15 @@ Stage:
 default
 ```
 
-The API Gateway endpoint used by the resume is:
+Endpoint:
 
 ```text
 https://yfsnyqf9rg.execute-api.af-south-1.amazonaws.com/default/CloudResumeVisitorCounter
 ```
 
-The API was tested independently before connecting it to the resume frontend.
+The API was tested independently before being integrated with the frontend.
 
-A successful API request returned:
-
-```json
-{
-  "count": 6
-}
-```
-
----
-
-# Milestone 4 — AWS Lambda
-
-**Completed:** 15 August 2026
-
-The API Gateway route was connected to the Lambda integration responsible for processing visitor-counter requests.
-
-Lambda provides the serverless compute layer between API Gateway and DynamoDB.
-
-The Lambda function processes the API request and retrieves/updates the visitor count stored in DynamoDB.
-
----
-
-# Milestone 5 — Amazon DynamoDB
-
-**Completed:** 15 August 2026
-
-DynamoDB was implemented as the persistent data store for the visitor counter.
-
-The visitor counter was successfully tested through the public API.
-
-The API subsequently returned:
+Example response:
 
 ```json
 {
@@ -381,17 +327,40 @@ The API subsequently returned:
 }
 ```
 
-This confirmed that the serverless backend was successfully processing visitor-counter requests.
+The number above represents a test result during development and is not intended to represent the current live visitor count.
 
 ---
 
-# Milestone 6 — API Gateway CORS
+# AWS Lambda
 
-**Completed:** 15 August 2026
+Lambda provides the serverless compute layer between API Gateway and DynamoDB.
 
-The initial API request worked when accessed directly in a browser but failed when called from the deployed resume.
+The Lambda function:
 
-The browser reported:
+1. Receives the API request.
+2. Reads the visitor counter from DynamoDB.
+3. Updates the stored count.
+4. Returns the resulting count as JSON.
+
+This removes the need for a traditional web server or continuously running backend infrastructure.
+
+---
+
+# Amazon DynamoDB
+
+DynamoDB provides persistent storage for the visitor counter.
+
+The database allows the visitor count to remain available between requests without requiring a traditional relational database server.
+
+The successful end-to-end API tests confirmed that the Lambda function could interact with DynamoDB and return the resulting visitor count through API Gateway.
+
+---
+
+# API Gateway CORS
+
+During development, the API initially worked when accessed directly but failed when called from JavaScript running on the deployed resume.
+
+The browser reported a CORS error similar to:
 
 ```text
 Access to fetch ... has been blocked by CORS policy
@@ -400,289 +369,213 @@ No 'Access-Control-Allow-Origin' header is present
 
 The issue was resolved by configuring CORS in API Gateway.
 
-The API was configured to allow browser requests from the resume frontend.
-
 This demonstrated an important distinction between:
 
-* An API working when accessed directly.
+* An API responding successfully when accessed directly.
 * An API being accessible from browser-based JavaScript.
 
-After configuring CORS, the live resume successfully retrieved the visitor count.
+After the CORS configuration was corrected, the live resume successfully retrieved the visitor count.
 
 ---
 
-# Milestone 7 — End-to-End Visitor Counter
+# Security Considerations
 
-**Completed:** 15 August 2026
+Security is being incorporated progressively throughout the project.
 
-The visitor counter is now fully operational.
+Current security measures include:
 
-The complete request flow is:
+* S3 Block Public Access enabled.
+* Private S3 origin behind CloudFront.
+* HTTPS delivery through CloudFront.
+* API Gateway used as the public API boundary.
+* Lambda used as the serverless application layer.
+* IAM used to control AWS resource permissions.
+* CORS configured for browser-based API access.
+
+The next security-focused stage is an IAM least-privilege review.
+
+The objective is to ensure that Lambda has only the DynamoDB permissions required by the visitor-counter application and that unnecessary permissions are removed.
+
+---
+
+# AWS CLI Troubleshooting
+
+One of the most useful parts of the project was troubleshooting AWS CLI authentication.
+
+Initially, the AWS CLI returned:
 
 ```text
-Visitor
-   │
-   ▼
-Resume Website
-   │
-   │ JavaScript fetch()
-   ▼
-API Gateway
-   │
-   ▼
-AWS Lambda
-   │
-   ▼
-DynamoDB
-   │
-   ▼
-Visitor Count
-   │
-   ▼
-API Gateway
-   │
-   ▼
-Resume Website
+InvalidClientTokenId
+The security token included in the request is invalid
 ```
 
-The live resume successfully displayed:
+The troubleshooting process included verifying:
+
+* AWS access key credentials.
+* IAM access-key status.
+* AWS CLI configuration.
+* AWS environment variables.
+* `AWS_SESSION_TOKEN`.
+* Proxy configuration.
+* AWS endpoint configuration.
+* AWS region configuration.
+* System time.
+* AWS CLI version.
+
+The AWS CLI version being used was:
 
 ```text
-👀 Total Visitors: 7
+AWS CLI 2.36.19
 ```
 
-This confirms that the frontend, API Gateway, Lambda, DynamoDB, and CORS configuration are working together successfully.
-
----
-
-# Current AWS Architecture
-
-The current architecture is:
+The configured AWS region was:
 
 ```text
-                         Internet
-                            │
-                            ▼
-                   Amazon CloudFront
-                            │
-                     Private S3 Access
-                            │
-                            ▼
-                  Amazon S3 Bucket
-             cameron-cloud-resume-2026
-                            │
-                            ▼
-                       Resume
-                  ┌─────────┴─────────┐
-                  │                   │
-             style.css          script.js
-                                      │
-                                      │ API Request
-                                      ▼
-                             Amazon API Gateway
-                                      │
-                                      ▼
-                                 AWS Lambda
-                                      │
-                                      ▼
-                               Amazon DynamoDB
-                                      │
-                                      ▼
-                               Visitor Count
+af-south-1
 ```
 
-The S3 bucket is not directly exposed as a public website.
+## Root Cause
 
-CloudFront acts as the public-facing content delivery layer.
+The issue was ultimately traced to the **Africa (Cape Town) — `af-south-1` region not being enabled for the AWS account**.
 
-API Gateway provides the public API endpoint used by the JavaScript visitor counter.
+After enabling the region, the following command successfully authenticated:
 
-Lambda provides serverless compute.
+```bash
+aws sts get-caller-identity --region af-south-1
+```
 
-DynamoDB provides persistent visitor-count storage.
+### Lesson Learned
+
+Valid AWS credentials do not necessarily mean that every regional AWS request will succeed.
+
+When troubleshooting AWS CLI authentication, the target region and account configuration should be verified before repeatedly rotating credentials.
+
+This provided practical experience with:
+
+* IAM authentication.
+* AWS CLI configuration.
+* AWS regional configuration.
+* AWS account settings.
+* Systematic cloud troubleshooting.
 
 ---
 
-# Current Live Deployment
+# Development Approach
 
-### CloudFront
+The project follows an incremental development methodology:
 
 ```text
-https://d2kecljl2gk63a.cloudfront.net
+Build
+  │
+  ▼
+Test
+  │
+  ▼
+Review
+  │
+  ▼
+Troubleshoot
+  │
+  ▼
+Improve
+  │
+  ▼
+Commit
+  │
+  ▼
+Document
 ```
 
-### API Gateway
+Git commits are used to capture meaningful implementation milestones.
+
+This approach makes it possible to identify when changes were introduced and provides a recoverable history throughout the project.
+
+AI-assisted guidance was used as a learning aid, while implementation, testing, troubleshooting, and verification were performed as part of the hands-on development process.
+
+---
+
+# Git & Version Control
+
+Git and GitHub are used throughout the project to:
+
+* Track source-code changes.
+* Maintain version history.
+* Create meaningful commits.
+* Correct implementation mistakes.
+* Safely experiment with changes.
+* Maintain AWS infrastructure configuration.
+* Document project progress.
+
+Current development flow:
 
 ```text
-https://yfsnyqf9rg.execute-api.af-south-1.amazonaws.com/default/CloudResumeVisitorCounter
+Local Development
+       │
+       ▼
+      Git
+       │
+       ▼
+GitHub Repository
+       │
+       ├──────────────► GitHub Pages
+       │
+       ▼
+AWS Deployment
+       │
+       ▼
+S3 → CloudFront
 ```
 
-### Current Visitor Counter Test
-
-```json
-{
-  "count": 7
-}
-```
+GitHub Actions CI/CD will be added as a future stage.
 
 ---
 
-# AWS Infrastructure Development ☁️
+# Infrastructure as Code
 
-**Status:** In Progress
+## AWS CloudFormation
 
-The AWS implementation phase of the Cloud Resume Challenge is now substantially complete for the core website and serverless visitor counter.
-
-The initial infrastructure work is being defined using AWS CloudFormation.
-
-## CloudFormation
-
-The project currently contains:
+The repository contains an AWS CloudFormation implementation under:
 
 ```text
-AWS/
-├── playbooks/
-├── README.md
-└── template.yaml
+AWS/template.yaml
 ```
 
-The CloudFormation infrastructure will continue to be reviewed and expanded so that the manually created AWS resources can eventually be represented and managed consistently through Infrastructure as Code.
+CloudFormation is currently being reviewed and expanded so that AWS resources created during the manual implementation phase can progressively be represented through Infrastructure as Code.
+
+The objective is to make the infrastructure:
+
+* Reproducible.
+* Documented.
+* Version controlled.
+* Easier to update.
+* Easier to recreate.
+
+The CloudFormation implementation will be validated before being used as the primary infrastructure deployment mechanism.
+
+## Terraform
+
+Terraform is planned after the AWS architecture has stabilised.
+
+The Terraform implementation will provide practical experience with:
+
+* Providers.
+* Resources.
+* Variables.
+* Outputs.
+* State management.
+* Modules.
+* Dependencies.
+* Infrastructure lifecycle management.
+
+It will also provide an opportunity to compare AWS-native CloudFormation with a multi-cloud Infrastructure as Code tool.
 
 ---
 
-# What Was Completed Today — 15 August 2026
+# CI/CD Roadmap
 
-Today was the main AWS serverless implementation session.
+GitHub Actions is planned to automate frontend deployment.
 
-### AWS Authentication & Infrastructure
-
-* Resolved AWS CLI authentication problems.
-* Confirmed AWS IAM credentials were valid.
-* Identified that `af-south-1` needed to be enabled.
-* Successfully authenticated AWS CLI against the Cape Town region.
-* Created and configured the S3 deployment.
-* Uploaded the resume files to S3.
-* Configured CloudFront.
-* Configured `index.html` as the CloudFront default root object.
-* Configured private S3 access through CloudFront.
-
-### Serverless Visitor Counter
-
-* Created/configured API Gateway.
-* Created the `CloudResumeVisitorCounter` route.
-* Connected API Gateway to Lambda.
-* Implemented the Lambda/DynamoDB visitor counter.
-* Tested the API independently.
-* Confirmed the API returned visitor-count JSON.
-* Connected the JavaScript frontend to the API.
-* Diagnosed the browser CORS error.
-* Configured CORS in API Gateway.
-* Tested the live website.
-* Confirmed the live resume displayed:
-
-```text
-👀 Total Visitors: 7
-```
-
-### Result
-
-The core Cloud Resume Challenge website is now functioning as a **serverless AWS application**, rather than simply being a static resume.
-
----
-
-# Current Status
-
-**Last Updated:** 15 August 2026
-
-## Completed
-
-* ✅ HTML resume
-* ✅ CSS styling
-* ✅ JavaScript foundation
-* ✅ Git and GitHub version control
-* ✅ GitHub Pages deployment
-* ✅ Visitor-counter frontend
-* ✅ AWS CLI authentication troubleshooting
-* ✅ AWS Cape Town region configuration
-* ✅ Private Amazon S3 bucket
-* ✅ Resume deployment to S3
-* ✅ Amazon CloudFront distribution
-* ✅ CloudFront HTTPS deployment
-* ✅ CloudFront default root object
-* ✅ Private S3 access through CloudFront
-* ✅ Amazon API Gateway
-* ✅ AWS Lambda
-* ✅ Amazon DynamoDB
-* ✅ JavaScript API integration
-* ✅ API Gateway CORS
-* ✅ End-to-end visitor counter
-* ✅ Live visitor count successfully tested
-
-## Currently In Progress
-
-* 🔄 AWS CloudFormation infrastructure
-* 🔄 Review and document IAM configuration
-
----
-
-# Remaining Work After 15 August 2026
-
-The core Cloud Resume Challenge functionality is now working. The remaining work is primarily focused on **security, automation, Infrastructure as Code, and production improvements**.
-
-## Phase 1 — Infrastructure & Security
-
-### 1. CloudFormation Completion
-
-* Review the existing `template.yaml`.
-* Determine which resources should be represented in CloudFormation.
-* Validate the template.
-* Test deployment and updates.
-* Document the infrastructure.
-
-### 2. IAM Security Review
-
-* Review Lambda execution permissions.
-* Apply least-privilege permissions.
-* Confirm Lambda only has the DynamoDB permissions it requires.
-* Review API Gateway permissions.
-* Remove unnecessary permissions where applicable.
-
----
-
-# Phase 2 — Custom Domain
-
-### 3. Domain / DNS
-
-Configure a custom domain for the resume.
-
-Potential architecture:
-
-```text
-Custom Domain
-      │
-      ▼
-    DNS
-      │
-      ▼
-CloudFront
-      │
-      ▼
-     S3
-```
-
-### 4. AWS Certificate Manager
-
-Create and validate an ACM certificate for the custom domain.
-
-Configure CloudFront to use the certificate for HTTPS.
-
----
-
-# Phase 3 — CI/CD Automation
-
-### 5. GitHub Actions
-
-Implement automated deployment so that:
+The intended workflow is:
 
 ```text
 Git Commit
@@ -697,101 +590,156 @@ GitHub Actions
 AWS Deployment
     │
     ├── S3
+    │
     └── CloudFront
 ```
 
-The objective is to remove the need for manual deployment after each approved change.
+The objective is to move from manual deployment toward an automated deployment pipeline.
 
 ---
 
-# Phase 4 — Infrastructure as Code
+# Current AWS Architecture
 
-### 6. Terraform
+The current production-style architecture consists of:
 
-After the AWS architecture is stable, reproduce the infrastructure using Terraform.
-
-The Terraform implementation will provide additional practical experience with:
-
-* Providers
-* Resources
-* Variables
-* Outputs
-* State
-* Modules
-* Dependencies
-* Infrastructure lifecycle management
-
-The existing CloudFormation work will also provide a useful comparison between AWS-native Infrastructure as Code and Terraform.
+| Layer            | AWS Service        | Purpose                          |
+| ---------------- | ------------------ | -------------------------------- |
+| Content Delivery | Amazon CloudFront  | Public HTTPS delivery            |
+| Storage          | Amazon S3          | Private static website content   |
+| API              | Amazon API Gateway | Public visitor-counter API       |
+| Compute          | AWS Lambda         | Serverless application logic     |
+| Database         | Amazon DynamoDB    | Persistent visitor-count storage |
+| Security         | AWS IAM            | Access control and permissions   |
+| IaC              | AWS CloudFormation | Infrastructure definition        |
 
 ---
 
-# Phase 5 — Documentation & Portfolio
+# Challenges Solved
 
-### 7. Final Documentation
+During the project I encountered and resolved issues involving:
 
-Document:
+* HTML/CSS/JavaScript asset paths.
+* Git tracking and repository updates.
+* GitHub Pages deployment.
+* AWS CLI authentication.
+* AWS regional configuration.
+* S3 deployment.
+* CloudFront configuration.
+* Private S3 access.
+* API Gateway route configuration.
+* Lambda integration.
+* DynamoDB integration.
+* Browser CORS restrictions.
+* Frontend/API integration.
+* Independent API testing.
 
-* AWS architecture.
-* API Gateway configuration.
-* Lambda implementation.
-* DynamoDB design.
+These challenges provided practical experience in diagnosing problems across multiple layers of a cloud application rather than relying on a single-service troubleshooting approach.
+
+---
+
+# Key Learning Outcomes
+
+This project has provided practical experience with:
+
+### Cloud Architecture
+
+* Designing a serverless AWS architecture.
+* Separating frontend delivery from backend processing.
+* Using managed AWS services instead of traditional servers.
+
+### AWS
+
+* Amazon S3
+* Amazon CloudFront
+* Amazon API Gateway
+* AWS Lambda
+* Amazon DynamoDB
+* AWS IAM
+* AWS CLI
+* AWS CloudFormation
+
+### Security
+
+* S3 Block Public Access.
+* Private S3 origins.
 * IAM permissions.
+* API security boundaries.
 * CORS configuration.
-* CloudFront/S3 architecture.
-* Troubleshooting experiences.
-* Security decisions.
+* Least-privilege principles.
+
+### DevOps
+
+* Git.
+* GitHub.
+* Incremental commits.
 * Infrastructure as Code.
-* CI/CD pipeline.
+* CI/CD planning.
+* Deployment troubleshooting.
 
-### 8. Portfolio Presentation
+### Problem Solving
 
-Once the infrastructure and automation are complete, the project can be presented as a portfolio project demonstrating practical experience with:
+The project reinforced the importance of:
 
-* AWS
-* Serverless architecture
-* Cloud infrastructure
-* API development
-* IAM
-* DynamoDB
-* Lambda
-* API Gateway
-* CloudFront
-* S3
-* Git/GitHub
-* GitHub Actions
-* CloudFormation
-* Terraform
+* Testing each layer independently.
+* Reading error messages carefully.
+* Verifying assumptions.
+* Understanding service dependencies.
+* Troubleshooting systematically.
+* Documenting the root cause rather than only the final fix.
 
 ---
 
-# Learning Objective
+# Roadmap
 
-This project is focused on developing practical cloud engineering skills through hands-on implementation.
+## Phase 1 — Infrastructure & Security
 
-Rather than simply completing the challenge, the objective is to understand the architecture, technologies, security considerations, troubleshooting processes, and design decisions behind each stage of the solution.
+* [x] Deploy frontend to S3.
+* [x] Configure CloudFront.
+* [x] Implement private S3 access.
+* [x] Implement API Gateway.
+* [x] Implement Lambda.
+* [x] Implement DynamoDB visitor counter.
+* [x] Configure CORS.
+* [ ] Complete CloudFormation implementation.
+* [ ] Complete IAM least-privilege review.
 
-The project is intended to build practical experience in:
+## Phase 2 — Custom Domain
 
-* Cloud infrastructure.
-* Serverless architecture.
-* AWS services.
-* API development.
-* Security and IAM.
-* Version control.
-* CI/CD automation.
-* Infrastructure as Code.
-* Troubleshooting and problem solving.
-* Cloud architecture and design decisions.
+* [ ] Configure DNS.
+* [ ] Create ACM certificate.
+* [ ] Attach certificate to CloudFront.
+* [ ] Configure custom resume domain.
 
-The core serverless application is now operational. The next stage of the project will focus on making the infrastructure **more secure, automated, reproducible, and production-ready**.
+## Phase 3 — CI/CD
+
+* [ ] Configure GitHub Actions.
+* [ ] Automate S3 deployment.
+* [ ] Automate CloudFront updates/invalidation.
+* [ ] Document deployment pipeline.
+
+## Phase 4 — Infrastructure as Code
+
+* [ ] Finalise CloudFormation.
+* [ ] Build Terraform configuration.
+* [ ] Compare CloudFormation and Terraform approaches.
+* [ ] Document infrastructure lifecycle management.
+
+## Phase 5 — Final Portfolio
+
+* [ ] Complete architecture documentation.
+* [ ] Add final architecture diagram.
+* [ ] Document security decisions.
+* [ ] Document CI/CD pipeline.
+* [ ] Document Infrastructure as Code.
+* [ ] Perform final project review.
 
 ---
 
-# Project Achievement — 15 August 2026
+# Project Achievement
 
-The most significant milestone achieved today was moving the project from a **static cloud-hosted resume** to a **working serverless AWS application**.
+The most significant milestone reached during the AWS implementation phase was transforming the project from a static resume into a **working serverless AWS application**.
 
-The final architecture now demonstrates:
+The completed architecture demonstrates:
 
 ```text
 Frontend
@@ -800,7 +748,7 @@ Frontend
 CloudFront
    │
    ▼
-S3
+Private S3
    │
    │ JavaScript
    ▼
@@ -813,14 +761,35 @@ Lambda
 DynamoDB
 ```
 
-The visitor counter was successfully tested from the live website and returned:
+The visitor counter was successfully tested from the live deployed website, demonstrating end-to-end communication between the frontend and AWS serverless backend.
 
-```text
-👀 Total Visitors: 7
-```
+The core application is now operational.
 
-This marks the completion of the core functional portion of the Cloud Resume Challenge.
+The remaining work focuses on making the project increasingly:
 
-The remaining work will focus on security hardening, Infrastructure as Code, custom domain configuration, CI/CD automation, and final documentation.
+**secure → reproducible → automated → production-ready**
+
+---
+
+# Final Objective
+
+The Cloud Resume Challenge is being used as a practical foundation for developing cloud engineering and cybersecurity-oriented skills.
+
+The final project will demonstrate practical understanding of:
+
+* AWS cloud architecture.
+* Serverless application design.
+* Cloud security.
+* IAM.
+* API integration.
+* Database services.
+* Infrastructure as Code.
+* CI/CD.
+* Git/GitHub.
+* Troubleshooting.
+* Cloud deployment.
+* Technical documentation.
+
+Rather than treating the challenge as a one-time website project, this repository documents the progression from a simple frontend application to a more secure, automated, reproducible cloud architecture.
 
 
