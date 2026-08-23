@@ -1,12 +1,21 @@
 AWSTemplateFormatVersion: 2010-09-09
-Description: Infrastructure for Cloud Resume 
+
+Description: Infrastructure for Cloud Resume
+
 Parameters:
   BucketName:
-    Type: string
-
+    Type: String
+    Default: cameron-cloud-resume-2026
+    Description: Name of the existing S3 bucket used by the Cloud Resume
 
 Resources:
-   Bucket:
-    Properties: 
-     Type: AWS::S3::Bucket
-     BucketName: !Ref BucketName
+  ResumeBucket:
+    Type: AWS::S3::Bucket
+    DeletionPolicy: Retain
+    UpdateReplacePolicy: Retain
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true

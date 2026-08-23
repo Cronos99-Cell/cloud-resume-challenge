@@ -9,7 +9,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     visitorCount.textContent = "Loading...";
 
-    const apiUrl = "https://yfsnyqf9rg.execute-api.af-south-1.amazonaws.com/default/CloudResumeVisitorCounter";
+    const apiUrl =
+    "https://yfsnyqf9rg.execute-api.af-south-1.amazonaws.com/default/CloudResumeVisitorCounter";
 
     fetch(apiUrl)
         .then(response => {
@@ -23,6 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
             console.error("Visitor counter error:", error);
-            visitorCount.textContent = "Unavailable";
+            visitorCount.textContent = "Unable to load";
         });
 });
