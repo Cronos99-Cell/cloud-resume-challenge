@@ -19,7 +19,7 @@ The goal was not only to build a resume website, but to gain hands-on experience
 ## Live Project
 
 🌐 **Live Resume:**  
-[View the Cloud Resume](https://d3xxxxxxxxxxxxx.cloudfront.net/)
+[View the Cloud Resume](https://d2kecljl2gk63a.cloudfront.net/)
 
 > The website is delivered through Amazon CloudFront using HTTPS.
 
