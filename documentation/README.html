@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
 
     <meta
         name="description"
-        content="Comprehensive documentation of an AWS Cloud Resume Challenge project covering S3, CloudFront, API Gateway, Lambda, DynamoDB, IAM, CloudFormation, GitHub and CI/CD."
+        content="Comprehensive technical documentation for an AWS Cloud Resume Challenge project using S3, CloudFront, API Gateway, Lambda, DynamoDB, IAM, CloudFormation, GitHub and serverless architecture."
     >
 
     <style>
@@ -54,6 +53,7 @@
         }
 
         a:hover {
+            color: var(--accent-dark);
             text-decoration: underline;
         }
 
@@ -101,18 +101,33 @@
         }
 
         .hero-tag {
-            border: 1px solid rgba(255,255,255,0.25);
-            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            background: rgba(255, 255, 255, 0.08);
             padding: 8px 14px;
             border-radius: 999px;
             font-size: 0.9rem;
+        }
+
+        .hero-link {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 12px 20px;
+            background: white;
+            color: var(--accent-dark);
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .hero-link:hover {
+            text-decoration: none;
+            background: #eff6ff;
         }
 
         nav {
             position: sticky;
             top: 0;
             z-index: 100;
-            background: rgba(255,255,255,0.96);
+            background: rgba(255, 255, 255, 0.96);
             border-bottom: 1px solid var(--border);
             backdrop-filter: blur(8px);
         }
@@ -261,6 +276,7 @@
             font-family: Consolas, Monaco, monospace;
             font-size: 0.88rem;
             line-height: 1.6;
+            white-space: pre-wrap;
         }
 
         .table-wrapper {
@@ -403,6 +419,11 @@
             .eyebrow {
                 color: black;
             }
+
+            .hero-link {
+                border: 1px solid black;
+                color: black;
+            }
         }
     </style>
 </head>
@@ -411,14 +432,15 @@
 
 <header>
     <div class="container">
+
         <div class="eyebrow">Cloud Resume Challenge</div>
 
         <h1>AWS Cloud Resume Project</h1>
 
         <p class="hero-description">
-            A comprehensive cloud engineering portfolio project demonstrating the
-            design, deployment, documentation and troubleshooting of a serverless
-            resume application on Amazon Web Services.
+            A comprehensive cloud engineering portfolio project demonstrating
+            the design, deployment, documentation and troubleshooting of a
+            serverless resume application on Amazon Web Services.
         </p>
 
         <div class="hero-meta">
@@ -433,6 +455,16 @@
             <span class="hero-tag">GitHub</span>
             <span class="hero-tag">HTML / CSS / JavaScript</span>
         </div>
+
+        <a
+            class="hero-link"
+            href="https://d2kecljl2gk63a.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            View the Live Cloud Resume →
+        </a>
+
     </div>
 </header>
 
@@ -446,100 +478,110 @@
         <a href="#visitor">Visitor Counter</a>
         <a href="#cloudformation">CloudFormation</a>
         <a href="#security">Security</a>
+        <a href="#git">Git & GitHub</a>
         <a href="#deployment">Deployment</a>
         <a href="#troubleshooting">Troubleshooting</a>
         <a href="#milestones">Milestones</a>
         <a href="#lessons">Lessons Learned</a>
+        <a href="#skills">Cloud Skills</a>
         <a href="#future">Future Work</a>
+        <a href="#status">Status</a>
     </div>
 </nav>
 
 <main class="container">
 
-    <!-- PROJECT OVERVIEW -->
-    <section id="overview">
-        <h2>1. Project Overview</h2>
+<section id="overview">
+    <h2>1. Project Overview</h2>
 
-        <p class="lead">
-            This project is an implementation of the Cloud Resume Challenge,
-            expanded into a practical AWS cloud engineering portfolio project.
-            The objective was not simply to create an online resume, but to
-            demonstrate how a modern cloud-based application can be designed,
-            deployed, secured, documented and maintained.
-        </p>
+    <p class="lead">
+        This project is an implementation of the Cloud Resume Challenge,
+        expanded into a practical AWS cloud engineering portfolio project.
+        The objective was not simply to create an online resume, but to
+        demonstrate how a modern cloud-based application can be designed,
+        deployed, secured, documented and maintained.
+    </p>
 
-        <p>
-            The project combines a responsive resume frontend with AWS cloud
-            services and a serverless visitor counter. The infrastructure
-            incorporates Amazon S3, Amazon CloudFront, API Gateway, AWS Lambda
-            and Amazon DynamoDB, with IAM used to control access.
-        </p>
+    <p>
+        The project combines a responsive resume frontend with AWS cloud
+        services and a serverless visitor counter. The architecture uses
+        Amazon S3, Amazon CloudFront, Amazon API Gateway, AWS Lambda and
+        Amazon DynamoDB, with IAM used to control access.
+    </p>
 
-        <p>
-            Infrastructure-as-Code was also introduced through AWS CloudFormation.
-            Git and GitHub were used for version control and project documentation,
-            while the project provides a foundation for future CI/CD and Terraform
-            work.
-        </p>
+    <p>
+        Infrastructure-as-Code was introduced through AWS CloudFormation.
+        Git and GitHub were used for version control and documentation,
+        creating a foundation for future CI/CD and Terraform work.
+    </p>
 
-        <div class="success-callout callout">
-            <strong>Project Goal:</strong>
-            Build a real cloud project that demonstrates practical AWS knowledge
-            rather than relying exclusively on certification theory.
-        </div>
-    </section>
+    <div class="success-callout callout">
+        <strong>Project Goal:</strong>
+        Build a real cloud project that demonstrates practical AWS knowledge
+        rather than relying exclusively on certification theory.
+    </div>
 
-    <!-- OBJECTIVES -->
-    <section id="objectives">
-        <h2>2. Project Objectives</h2>
+    <div class="callout">
+        <strong>Live Project:</strong>
+        <a
+            href="https://d2kecljl2gk63a.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            https://d2kecljl2gk63a.cloudfront.net/
+        </a>
+    </div>
+</section>
 
-        <p>
-            The project was designed around several practical learning objectives:
-        </p>
+<section id="objectives">
+    <h2>2. Project Objectives</h2>
 
-        <ul>
-            <li>Build a professional resume frontend using HTML, CSS and JavaScript.</li>
-            <li>Deploy a static website using AWS.</li>
-            <li>Use Amazon CloudFront for content delivery.</li>
-            <li>Implement a serverless visitor counter.</li>
-            <li>Connect a browser application to an API using API Gateway.</li>
-            <li>Use AWS Lambda for backend processing.</li>
-            <li>Store visitor information using DynamoDB.</li>
-            <li>Apply IAM principles to AWS resources.</li>
-            <li>Introduce Infrastructure-as-Code with CloudFormation.</li>
-            <li>Use Git and GitHub for source control and documentation.</li>
-            <li>Develop practical troubleshooting skills using the AWS Console and CLI.</li>
-            <li>Create a foundation for future Terraform and CI/CD implementation.</li>
-        </ul>
-    </section>
+    <p>
+        The project was designed around several practical learning objectives:
+    </p>
 
-    <!-- ARCHITECTURE -->
-    <section id="architecture">
-        <h2>3. AWS Architecture</h2>
+    <ul>
+        <li>Build a professional resume frontend using HTML, CSS and JavaScript.</li>
+        <li>Deploy a static website using AWS.</li>
+        <li>Use Amazon CloudFront for content delivery.</li>
+        <li>Implement a serverless visitor counter.</li>
+        <li>Connect a browser application to an API using API Gateway.</li>
+        <li>Use AWS Lambda for backend processing.</li>
+        <li>Store visitor information using DynamoDB.</li>
+        <li>Apply IAM principles to AWS resources.</li>
+        <li>Introduce Infrastructure-as-Code with CloudFormation.</li>
+        <li>Use Git and GitHub for source control and documentation.</li>
+        <li>Develop practical troubleshooting skills using the AWS Console and CLI.</li>
+        <li>Create a foundation for future Terraform and CI/CD implementation.</li>
+    </ul>
+</section>
 
-        <p>
-            The application uses a serverless architecture. The frontend is
-            delivered through CloudFront, while the visitor counter uses
-            API Gateway, Lambda and DynamoDB.
-        </p>
+<section id="architecture">
+    <h2>3. AWS Architecture</h2>
 
-        <div class="architecture">
-<pre>
+    <p>
+        The application uses a serverless architecture. The frontend is
+        delivered through CloudFront, while the visitor counter uses
+        API Gateway, Lambda and DynamoDB.
+    </p>
+
+    <div class="architecture">
+        <pre>
                          ┌──────────────────────┐
-                         │       User /        │
-                         │       Browser       │
+                         │        User /        │
+                         │        Browser       │
                          └──────────┬───────────┘
                                     │
                                     ▼
                          ┌──────────────────────┐
-                         │    CloudFront        │
-                         │   CDN / HTTPS        │
+                         │     CloudFront       │
+                         │      CDN / HTTPS     │
                          └──────────┬───────────┘
                                     │
                                     ▼
                          ┌──────────────────────┐
-                         │       Amazon S3      │
-                         │   Resume Frontend    │
+                         │      Amazon S3       │
+                         │    Resume Frontend   │
                          └──────────────────────┘
 
 
@@ -552,391 +594,378 @@
                      │
                      ▼
              ┌────────────────┐
-             │  AWS Lambda    │
-             │   Python       │
+             │   AWS Lambda   │
+             │     Python     │
              └───────┬────────┘
                      │
                      ▼
              ┌────────────────┐
-             │   DynamoDB     │
-             │ Visitor Count  │
+             │    DynamoDB    │
+             │  Visitor Count │
              └────────────────┘
-</pre>
+        </pre>
+    </div>
+
+    <h3>Architecture Flow</h3>
+
+    <ol>
+        <li>A visitor requests the resume website.</li>
+        <li>CloudFront receives and delivers the frontend content.</li>
+        <li>The frontend is backed by files stored in Amazon S3.</li>
+        <li>JavaScript sends a request to the API Gateway endpoint.</li>
+        <li>API Gateway invokes the Lambda function.</li>
+        <li>Lambda communicates with DynamoDB.</li>
+        <li>DynamoDB stores and increments the visitor count.</li>
+        <li>The response is returned through API Gateway to the browser.</li>
+        <li>The visitor count is displayed on the resume.</li>
+    </ol>
+</section>
+
+<section id="services">
+    <h2>4. AWS Services Used</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Amazon S3</h3>
+            <p>
+                Stores the static resume website files and provides the
+                origin for the CloudFront distribution.
+            </p>
         </div>
 
-        <h3>Architecture Flow</h3>
-
-        <ol>
-            <li>A visitor requests the resume website.</li>
-            <li>CloudFront receives and delivers the frontend content.</li>
-            <li>The frontend is backed by files stored in Amazon S3.</li>
-            <li>JavaScript sends a request to the API Gateway endpoint.</li>
-            <li>API Gateway invokes the Lambda function.</li>
-            <li>Lambda communicates with DynamoDB.</li>
-            <li>DynamoDB stores and increments the visitor count.</li>
-            <li>The response is returned through API Gateway to the browser.</li>
-            <li>The visitor count is displayed on the resume.</li>
-        </ol>
-    </section>
-
-    <!-- AWS SERVICES -->
-    <section id="services">
-        <h2>4. AWS Services Used</h2>
-
-        <div class="cards">
-
-            <div class="card">
-                <h3>Amazon S3</h3>
-                <p>
-                    Stores the static resume website files and provides the
-                    origin for the CloudFront distribution.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Amazon CloudFront</h3>
-                <p>
-                    Provides CDN delivery and HTTPS access to the resume
-                    frontend.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>API Gateway</h3>
-                <p>
-                    Provides the HTTP API endpoint used by the visitor counter.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>AWS Lambda</h3>
-                <p>
-                    Executes the serverless backend logic for processing
-                    visitor-count requests.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Amazon DynamoDB</h3>
-                <p>
-                    Provides persistent storage for the visitor counter.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>AWS IAM</h3>
-                <p>
-                    Controls permissions and access between AWS services and
-                    users.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>AWS CloudFormation</h3>
-                <p>
-                    Defines AWS infrastructure as code and provides a
-                    repeatable infrastructure management approach.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Amazon CloudWatch</h3>
-                <p>
-                    Provides the logging and monitoring foundation associated
-                    with Lambda and AWS operations.
-                </p>
-            </div>
-
+        <div class="card">
+            <h3>Amazon CloudFront</h3>
+            <p>
+                Provides CDN delivery and HTTPS access to the resume frontend.
+            </p>
         </div>
-    </section>
 
-    <!-- FRONTEND -->
-    <section id="frontend">
-        <h2>5. Frontend Development</h2>
+        <div class="card">
+            <h3>Amazon API Gateway</h3>
+            <p>
+                Provides the HTTP API endpoint used by the visitor counter.
+            </p>
+        </div>
 
-        <p>
-            The frontend was developed using standard web technologies:
-        </p>
+        <div class="card">
+            <h3>AWS Lambda</h3>
+            <p>
+                Executes the serverless backend logic for processing
+                visitor-count requests.
+            </p>
+        </div>
 
-        <ul>
-            <li><strong>HTML5</strong> — page structure and resume content.</li>
-            <li><strong>CSS3</strong> — styling, layout and responsive presentation.</li>
-            <li><strong>JavaScript</strong> — dynamic functionality and visitor counter integration.</li>
-        </ul>
+        <div class="card">
+            <h3>Amazon DynamoDB</h3>
+            <p>
+                Provides persistent storage for the visitor counter.
+            </p>
+        </div>
 
-        <h3>Frontend Completion</h3>
+        <div class="card">
+            <h3>AWS IAM</h3>
+            <p>
+                Controls permissions and access between AWS services and users.
+            </p>
+        </div>
 
-        <p>
-            The core resume frontend was completed on
-            <strong>02 August 2026</strong>.
-        </p>
+        <div class="card">
+            <h3>AWS CloudFormation</h3>
+            <p>
+                Defines AWS infrastructure as code and provides a repeatable
+                infrastructure management approach.
+            </p>
+        </div>
 
-        <ul class="checklist">
-            <li><span class="check">✓</span> HTML Resume completed</li>
-            <li><span class="check">✓</span> CSS styling completed</li>
-            <li><span class="check">✓</span> JavaScript foundation completed</li>
-            <li><span class="check">✓</span> GitHub repository established</li>
-            <li><span class="check">✓</span> GitHub Pages deployment completed</li>
-        </ul>
+        <div class="card">
+            <h3>Amazon CloudWatch</h3>
+            <p>
+                Provides logging and monitoring capabilities associated with
+                Lambda and AWS operations.
+            </p>
+        </div>
 
-        <h3>Frontend Files</h3>
+    </div>
+</section>
 
-        <pre class="code-block">
-index.html
+<section id="frontend">
+    <h2>5. Frontend Development</h2>
+
+    <p>
+        The frontend was developed using standard web technologies:
+    </p>
+
+    <ul>
+        <li><strong>HTML5</strong> — page structure and resume content.</li>
+        <li><strong>CSS3</strong> — styling, layout and responsive presentation.</li>
+        <li><strong>JavaScript</strong> — dynamic functionality and visitor counter integration.</li>
+    </ul>
+
+    <h3>Frontend Completion</h3>
+
+    <p>
+        The core resume frontend was completed on
+        <strong>02 August 2026</strong>.
+    </p>
+
+    <ul class="checklist">
+        <li><span class="check">✓</span> HTML Resume completed</li>
+        <li><span class="check">✓</span> CSS styling completed</li>
+        <li><span class="check">✓</span> JavaScript foundation completed</li>
+        <li><span class="check">✓</span> GitHub repository established</li>
+        <li><span class="check">✓</span> GitHub Pages deployment completed</li>
+    </ul>
+
+    <h3>Frontend Files</h3>
+
+    <pre class="code-block">index.html
 css/
     style.css
 js/
-    script.js
-        </pre>
-    </section>
+    script.js</pre>
+</section>
 
-    <!-- VISITOR COUNTER -->
-    <section id="visitor">
-        <h2>6. Serverless Visitor Counter</h2>
+<section id="visitor">
+    <h2>6. Serverless Visitor Counter</h2>
 
-        <p>
-            One of the key requirements of the Cloud Resume Challenge was to
-            implement a visitor counter. Rather than using a traditional
-            application server, this project uses AWS serverless services.
-        </p>
+    <p>
+        One of the key requirements of the Cloud Resume Challenge was to
+        implement a visitor counter. Rather than using a traditional
+        application server, this project uses AWS serverless services.
+    </p>
 
-        <h3>Request Flow</h3>
+    <h3>Request Flow</h3>
 
-        <pre class="code-block">
-Browser
-   ↓
+    <pre class="code-block">Browser
+    ↓
 JavaScript fetch()
-   ↓
+    ↓
 API Gateway
-   ↓
+    ↓
 AWS Lambda
-   ↓
+    ↓
 DynamoDB
-   ↓
+    ↓
 Lambda response
-   ↓
+    ↓
 API Gateway
-   ↓
-Browser
-        </pre>
+    ↓
+Browser</pre>
 
-        <h3>JavaScript Integration</h3>
+    <h3>JavaScript Integration</h3>
 
-        <p>
-            The frontend uses JavaScript to make a request to the API Gateway
-            endpoint. The returned value is then displayed on the resume.
-        </p>
+    <p>
+        The frontend uses JavaScript to make a request to the API Gateway
+        endpoint. The returned value is then displayed on the resume.
+    </p>
 
-        <h3>Lambda</h3>
+    <h3>Lambda</h3>
 
-        <p>
-            The Lambda function was implemented using Python and the AWS
-            SDK for Python, boto3. The function communicates with DynamoDB
-            to retrieve and update the visitor count.
-        </p>
+    <p>
+        The Lambda function was implemented using Python and the AWS SDK
+        for Python, boto3. The function communicates with DynamoDB to
+        retrieve and update the visitor count.
+    </p>
 
-        <h3>DynamoDB</h3>
+    <h3>DynamoDB</h3>
 
-        <p>
-            DynamoDB provides the persistent storage layer for the visitor
-            counter. This demonstrates the use of a managed NoSQL database
-            without requiring the deployment or administration of database
-            servers.
-        </p>
+    <p>
+        DynamoDB provides the persistent storage layer for the visitor counter.
+        This demonstrates the use of a managed NoSQL database without requiring
+        the deployment or administration of database servers.
+    </p>
 
-        <div class="callout">
-            <strong>Practical result:</strong>
-            The visitor counter successfully returned increasing values during
-            testing, including counts observed at 7, 15, 17, 18, 19 and later
-            29 during development and deployment testing.
-        </div>
-    </section>
+    <div class="callout">
+        <strong>Testing:</strong>
+        Visitor-count values increased during development and deployment
+        testing, confirming that the frontend, API, Lambda and DynamoDB
+        components were communicating successfully.
+    </div>
+</section>
 
-    <!-- S3 / CLOUDFRONT -->
-    <section>
-        <h2>7. S3 and CloudFront Deployment</h2>
+<section id="deployment">
+    <h2>7. S3 and CloudFront Deployment</h2>
 
-        <p>
-            Amazon S3 was used to store the static website content, while
-            CloudFront was placed in front of the origin to provide global
-            content delivery and HTTPS access.
-        </p>
+    <p>
+        Amazon S3 was used to store the static website content, while
+        CloudFront was placed in front of the origin to provide content
+        delivery and HTTPS access.
+    </p>
 
-        <h3>S3</h3>
+    <h3>S3</h3>
 
-        <p>
-            The project uses the S3 bucket associated with the resume project.
-            The bucket was configured as part of the AWS infrastructure and
-            integrated with CloudFront.
-        </p>
+    <p>
+        The project uses the S3 bucket associated with the resume project.
+        The bucket was configured as part of the AWS infrastructure and
+        integrated with CloudFront.
+    </p>
 
-        <h3>CloudFront</h3>
+    <h3>CloudFront</h3>
 
-        <p>
-            CloudFront acts as the distribution layer for the resume. The
-            default root object is configured as:
-        </p>
+    <p>
+        CloudFront acts as the distribution layer for the resume. The default
+        root object is configured as:
+    </p>
 
-        <pre class="code-block">index.html</pre>
+    <pre class="code-block">index.html</pre>
 
-        <p>
-            This means a request to the CloudFront distribution can serve the
-            resume's main HTML page automatically.
-        </p>
+    <p>
+        The live CloudFront deployment is available here:
+    </p>
 
-        <h3>HTTPS</h3>
+    <p>
+        <a
+            href="https://d2kecljl2gk63a.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <strong>View the Cloud Resume</strong>
+        </a>
+    </p>
 
-        <p>
-            HTTPS was incorporated into the CloudFront architecture. AWS
-            Certificate Manager (ACM) is part of the planned/custom-domain
-            configuration path for the project.
-        </p>
+    <h3>HTTPS</h3>
 
-        <div class="warning-callout callout">
-            <strong>Important:</strong>
-            CloudFront caching became an important practical lesson during
-            development. Changes to JavaScript and other assets may not appear
-            immediately because CloudFront can continue serving cached content.
-        </div>
-    </section>
+    <p>
+        HTTPS is provided through the CloudFront distribution. A custom-domain
+        configuration using AWS Certificate Manager (ACM) remains a potential
+        future enhancement.
+    </p>
 
-    <!-- CLOUDFORMATION -->
-    <section id="cloudformation">
-        <h2>8. Infrastructure as Code — AWS CloudFormation</h2>
+    <div class="warning-callout callout">
+        <strong>Important:</strong>
+        CloudFront caching became an important practical lesson during
+        development. Changes to JavaScript and other assets may not appear
+        immediately because CloudFront can continue serving cached content.
+    </div>
+</section>
 
-        <p>
-            CloudFormation was introduced to move the project beyond manually
-            configuring resources through the AWS Console.
-        </p>
+<section id="cloudformation">
+    <h2>8. Infrastructure as Code — AWS CloudFormation</h2>
 
-        <p>
-            The project contains an AWS directory with a CloudFormation
-            template:
-        </p>
+    <p>
+        CloudFormation was introduced to move the project beyond manually
+        configuring resources through the AWS Console.
+    </p>
 
-        <pre class="code-block">AWS/template.yaml</pre>
+    <p>
+        The project contains an AWS directory with the CloudFormation template:
+    </p>
 
-        <h3>CloudFormation Objectives</h3>
+    <pre class="code-block">AWS/template.yaml</pre>
 
-        <ul>
-            <li>Define infrastructure using YAML.</li>
-            <li>Make infrastructure reproducible.</li>
-            <li>Keep infrastructure definitions inside Git.</li>
-            <li>Reduce dependence on manual configuration.</li>
-            <li>Build practical Infrastructure-as-Code experience.</li>
-        </ul>
+    <h3>CloudFormation Objectives</h3>
 
-        <h3>Example Resource</h3>
+    <ul>
+        <li>Define infrastructure using YAML.</li>
+        <li>Make infrastructure reproducible.</li>
+        <li>Keep infrastructure definitions inside Git.</li>
+        <li>Reduce dependence on manual configuration.</li>
+        <li>Build practical Infrastructure-as-Code experience.</li>
+    </ul>
 
-        <pre class="code-block">
-Resources:
+    <h3>Example Resource</h3>
+
+    <pre class="code-block">Resources:
 
   ResumeBucket:
     Type: AWS::S3::Bucket
     DeletionPolicy: Retain
     UpdateReplacePolicy: Retain
     Properties:
-      BucketName: !Ref BucketName
-        </pre>
+      BucketName: !Ref BucketName</pre>
 
-        <p>
-            The S3 bucket resource was deliberately configured with retention
-            policies so that infrastructure operations would not automatically
-            remove the existing resume data.
-        </p>
+    <p>
+        The S3 bucket resource was configured with retention policies so that
+        infrastructure operations would not automatically remove the existing
+        resume data.
+    </p>
 
-        <h3>Existing Resource Import</h3>
+    <h3>Existing Resource Import</h3>
 
-        <p>
-            A particularly useful CloudFormation exercise involved importing
-            the already-existing S3 bucket into the CloudFormation stack rather
-            than deleting and recreating the bucket.
-        </p>
+    <p>
+        A particularly useful CloudFormation exercise involved importing the
+        already-existing S3 bucket into the CloudFormation stack rather than
+        deleting and recreating the bucket.
+    </p>
 
-        <p>
-            This provided practical exposure to managing existing AWS resources
-            through Infrastructure-as-Code.
-        </p>
+    <p>
+        This provided practical exposure to managing existing AWS resources
+        through Infrastructure-as-Code.
+    </p>
 
-        <h3>CloudFormation Validation</h3>
+    <h3>CloudFormation Validation</h3>
 
-        <p>
-            The AWS CLI was used to validate the CloudFormation template.
-        </p>
+    <p>
+        The AWS CLI was used to validate the CloudFormation template.
+    </p>
 
-        <pre class="code-block">
-aws cloudformation validate-template \
---template-body file://AWS/template.yaml \
---region af-south-1
-        </pre>
+    <pre class="code-block">aws cloudformation validate-template --template-body file://AWS/template.yaml --region af-south-1</pre>
 
-        <p>
-            The project uses the Cape Town AWS region:
-        </p>
+    <p>
+        The project uses the Cape Town AWS region:
+    </p>
 
-        <pre class="code-block">af-south-1</pre>
-    </section>
+    <pre class="code-block">af-south-1</pre>
+</section>
 
-    <!-- SECURITY -->
-    <section id="security">
-        <h2>9. IAM and Security</h2>
+<section id="security">
+    <h2>9. IAM and Security</h2>
 
-        <p>
-            Security is an important part of the project because the application
-            uses several AWS services that communicate with one another.
-        </p>
+    <p>
+        Security is an important part of the project because the application
+        uses several AWS services that communicate with one another.
+    </p>
 
-        <h3>Security Areas Considered</h3>
+    <h3>Security Areas Considered</h3>
 
-        <ul>
-            <li>IAM permissions and least-privilege principles.</li>
-            <li>S3 access configuration.</li>
-            <li>CloudFront distribution access.</li>
-            <li>API Gateway CORS configuration.</li>
-            <li>Lambda permissions.</li>
-            <li>DynamoDB permissions.</li>
-            <li>CloudFormation resource management.</li>
-            <li>AWS account and CLI credentials.</li>
-        </ul>
+    <ul>
+        <li>IAM permissions and least-privilege principles.</li>
+        <li>S3 access configuration.</li>
+        <li>CloudFront distribution access.</li>
+        <li>API Gateway CORS configuration.</li>
+        <li>Lambda permissions.</li>
+        <li>DynamoDB permissions.</li>
+        <li>CloudFormation resource management.</li>
+        <li>AWS account and CLI credentials.</li>
+    </ul>
 
-        <h3>S3 Public Access</h3>
+    <h3>S3 Public Access</h3>
 
-        <p>
-            Public access controls were explicitly considered when configuring
-            the S3 infrastructure. The CloudFormation template was updated to
-            include a public-access-block configuration as part of the security
-            approach.
-        </p>
+    <p>
+        Public access controls were explicitly considered when configuring
+        the S3 infrastructure. The CloudFormation template was updated to
+        include public-access-block configuration as part of the security
+        approach.
+    </p>
 
-        <h3>CORS</h3>
+    <h3>CORS</h3>
 
-        <p>
-            The visitor counter initially encountered a browser CORS issue.
-            API Gateway CORS configuration was updated so that browser requests
-            could successfully communicate with the backend API.
-        </p>
+    <p>
+        The visitor counter initially encountered a browser CORS issue.
+        API Gateway CORS configuration was updated so that browser requests
+        could successfully communicate with the backend API.
+    </p>
 
-        <div class="success-callout callout">
-            <strong>Security lesson:</strong>
-            Cloud architecture is not simply about making resources work.
-            Permissions, access paths, CORS and resource exposure must be
-            considered as part of the design.
-        </div>
-    </section>
+    <div class="success-callout callout">
+        <strong>Security lesson:</strong>
+        Cloud architecture is not simply about making resources work.
+        Permissions, access paths, CORS and resource exposure must be
+        considered as part of the design.
+    </div>
+</section>
 
-    <!-- GIT -->
-    <section>
-        <h2>10. Git and GitHub</h2>
+<section id="git">
+    <h2>10. Git and GitHub</h2>
 
-        <p>
-            Git was used throughout the project to track changes to the resume,
-            infrastructure and documentation.
-        </p>
+    <p>
+        Git was used throughout the project to track changes to the resume,
+        infrastructure and documentation.
+    </p>
 
-        <h3>Repository Structure</h3>
+    <h3>Repository Structure</h3>
 
-        <pre class="code-block">
-cloud-resume-challenge/
+    <pre class="code-block">cloud-resume-challenge/
 │
 ├── index.html
 ├── css/
@@ -950,403 +979,384 @@ cloud-resume-challenge/
 │
 ├── README.md
 ├── README.html
-└── ...
-        </pre>
+└── ...</pre>
 
-        <h3>Typical Git Workflow</h3>
+    <h3>Typical Git Workflow</h3>
 
-        <pre class="code-block">
-git status
+    <pre class="code-block">git status
 
 git add .
 
 git commit -m "Update Cloud Resume project"
 
-git push origin main
-        </pre>
+git push origin main</pre>
 
-        <p>
-            Git provides an audit trail of changes and makes the project
-            easier to maintain as additional cloud technologies are introduced.
-        </p>
-    </section>
+    <p>
+        Git provides an audit trail of changes and makes the project easier
+        to maintain as additional cloud technologies are introduced.
+    </p>
+</section>
 
-    <!-- DEPLOYMENT -->
-    <section id="deployment">
-        <h2>11. Deployment Process</h2>
+<section id="deployment-process">
+    <h2>11. Deployment Process</h2>
 
-        <p>
-            The project evolved through several stages rather than being built
-            entirely in AWS from the beginning.
-        </p>
+    <h3>Stage 1 — Frontend</h3>
 
-        <h3>Stage 1 — Frontend</h3>
+    <ol>
+        <li>Create the resume using HTML.</li>
+        <li>Add CSS styling.</li>
+        <li>Add JavaScript functionality.</li>
+        <li>Place the project under Git version control.</li>
+        <li>Deploy the frontend to GitHub Pages during development.</li>
+    </ol>
 
-        <ol>
-            <li>Create the resume using HTML.</li>
-            <li>Add CSS styling.</li>
-            <li>Add JavaScript functionality.</li>
-            <li>Place the project under Git version control.</li>
-            <li>Deploy the frontend to GitHub Pages during development.</li>
-        </ol>
+    <h3>Stage 2 — AWS Frontend</h3>
 
-        <h3>Stage 2 — AWS Frontend</h3>
+    <ol>
+        <li>Create the S3 storage layer.</li>
+        <li>Upload the static website files.</li>
+        <li>Create the CloudFront distribution.</li>
+        <li>Configure the default root object.</li>
+        <li>Test HTTPS delivery.</li>
+    </ol>
 
-        <ol>
-            <li>Create the S3 storage layer.</li>
-            <li>Upload the static website files.</li>
-            <li>Create the CloudFront distribution.</li>
-            <li>Configure the default root object.</li>
-            <li>Test HTTPS delivery.</li>
-        </ol>
+    <h3>Stage 3 — Serverless Backend</h3>
 
-        <h3>Stage 3 — Serverless Backend</h3>
+    <ol>
+        <li>Create the DynamoDB table.</li>
+        <li>Create the Lambda function.</li>
+        <li>Configure Lambda permissions.</li>
+        <li>Create the API Gateway endpoint.</li>
+        <li>Configure CORS.</li>
+        <li>Connect JavaScript to the API endpoint.</li>
+        <li>Test visitor-count functionality.</li>
+    </ol>
 
-        <ol>
-            <li>Create DynamoDB table.</li>
-            <li>Create Lambda function.</li>
-            <li>Configure Lambda permissions.</li>
-            <li>Create API Gateway endpoint.</li>
-            <li>Configure CORS.</li>
-            <li>Connect JavaScript to the API endpoint.</li>
-            <li>Test visitor-count functionality.</li>
-        </ol>
+    <h3>Stage 4 — Infrastructure as Code</h3>
 
-        <h3>Stage 4 — Infrastructure as Code</h3>
+    <ol>
+        <li>Create the CloudFormation template.</li>
+        <li>Validate the YAML template.</li>
+        <li>Deploy and import resources through CloudFormation.</li>
+        <li>Inspect stack events.</li>
+        <li>Verify stack resources.</li>
+        <li>Commit infrastructure definitions to Git.</li>
+    </ol>
+</section>
 
-        <ol>
-            <li>Create the CloudFormation template.</li>
-            <li>Validate the YAML template.</li>
-            <li>Deploy/import resources through CloudFormation.</li>
-            <li>Inspect stack events.</li>
-            <li>Verify stack resources.</li>
-            <li>Commit infrastructure definitions to Git.</li>
-        </ol>
-    </section>
+<section id="troubleshooting">
+    <h2>12. Troubleshooting and Problems Solved</h2>
 
-    <!-- TROUBLESHOOTING -->
-    <section id="troubleshooting">
-        <h2>12. Troubleshooting and Problems Solved</h2>
+    <p>
+        One of the most valuable parts of the project was the troubleshooting
+        process. Several issues occurred during development and deployment,
+        providing practical experience that cannot be gained from theory alone.
+    </p>
 
-        <p>
-            One of the most valuable parts of the project was the troubleshooting
-            process. Several issues occurred during development and deployment,
-            providing practical experience that cannot be gained from theory alone.
-        </p>
+    <h3>AWS CLI Authentication and Region Problems</h3>
 
-        <h3>AWS CLI Authentication / Region Problems</h3>
+    <p>
+        AWS CLI commands initially produced authentication and token-related
+        errors, including errors involving invalid credentials and request
+        signing.
+    </p>
 
-        <p>
-            AWS CLI commands initially produced authentication and token-related
-            errors, including errors involving invalid credentials and request
-            signing.
-        </p>
+    <p>
+        The underlying issue was related to the AWS region configuration.
+        The Cape Town region, <code>af-south-1</code>, had to be enabled in
+        the AWS account before the project could operate correctly there.
+    </p>
 
-        <p>
-            The underlying issue was related to the AWS region configuration.
-            The Cape Town region, <code>af-south-1</code>, had to be enabled in
-            the AWS account before the project could operate correctly there.
-        </p>
+    <h3>CloudFormation Validation</h3>
 
-        <h3>CloudFormation Validation</h3>
+    <p>
+        CloudFormation initially produced deployment and rollback problems.
+        Stack events were used to identify validation failures instead of
+        attempting to guess the cause.
+    </p>
 
-        <p>
-            CloudFormation initially produced deployment and rollback problems.
-            Stack events were used to identify validation failures instead of
-            attempting to guess the cause.
-        </p>
+    <pre class="code-block">aws cloudformation validate-template --template-body file://AWS/template.yaml --region af-south-1
 
-        <p>
-            The AWS CLI commands used to inspect the stack included validation
-            and stack-event commands.
-        </p>
+aws cloudformation describe-stack-events --stack-name YOUR_STACK_NAME --region af-south-1
 
-        <pre class="code-block">
-aws cloudformation validate-template \
---template-body file://AWS/template.yaml \
---region af-south-1
+aws cloudformation describe-stack-resources --stack-name YOUR_STACK_NAME --region af-south-1</pre>
 
-aws cloudformation describe-stack-events \
---stack-name YOUR_STACK_NAME \
---region af-south-1
+    <h3>CloudFormation Rollback</h3>
 
-aws cloudformation describe-stack-resources \
---stack-name YOUR_STACK_NAME \
---region af-south-1
-        </pre>
+    <p>
+        A CloudFormation deployment entered a rollback state. Instead of
+        abandoning the infrastructure work, stack events were examined,
+        the template was corrected and the existing S3 bucket was ultimately
+        imported into the stack.
+    </p>
 
-        <h3>CloudFormation Rollback</h3>
+    <h3>CORS Error</h3>
 
-        <p>
-            A CloudFormation deployment entered a rollback state. Instead of
-            abandoning the infrastructure work, stack events were examined,
-            the template was corrected and the existing S3 bucket was ultimately
-            imported into the stack.
-        </p>
+    <p>
+        The browser initially rejected the API request because of CORS.
+        API Gateway was configured to permit the browser request, resolving
+        the communication issue.
+    </p>
 
-        <h3>CORS Error</h3>
+    <h3>CloudFront Caching</h3>
 
-        <p>
-            The browser initially rejected the API request because of CORS.
-            API Gateway was configured to permit the browser request, resolving
-            the communication issue.
-        </p>
+    <p>
+        Another important issue occurred when changes to JavaScript were not
+        immediately visible after deployment.
+    </p>
 
-        <h3>CloudFront Caching</h3>
+    <p>
+        The browser and CloudFront were both capable of serving cached versions
+        of the files. Browser developer tools and cache controls were used to
+        confirm whether the latest version of the JavaScript had actually been
+        loaded.
+    </p>
 
-        <p>
-            Another important issue occurred when changes to JavaScript were
-            not immediately visible after deployment.
-        </p>
+    <div class="warning-callout callout">
+        <strong>Key lesson:</strong>
+        When a cloud application appears not to have updated, the problem
+        may be caching rather than the deployment itself.
+    </div>
 
-        <p>
-            The browser and CloudFront were both capable of serving cached
-            versions of the files. Browser developer tools and cache controls
-            were used to confirm whether the latest version of the JavaScript
-            had actually been loaded.
-        </p>
+    <h3>Favicon 403</h3>
 
-        <div class="warning-callout callout">
-            <strong>Key lesson:</strong>
-            When a cloud application appears not to have updated, the problem
-            may be caching rather than the deployment itself.
+    <p>
+        A favicon request also returned a 403 response during testing.
+        This demonstrated the importance of examining individual browser
+        network requests rather than assuming that every request has the
+        same cause.
+    </p>
+</section>
+
+<section id="milestones">
+    <h2>13. Project Milestones</h2>
+
+    <div class="timeline">
+
+        <div class="timeline-item">
+            <div class="date">02 August 2026</div>
+            <h3>HTML Resume</h3>
+            <p>
+                Resume structure completed using HTML.
+                <span class="status complete">Completed</span>
+            </p>
         </div>
 
-        <h3>Favicon 403</h3>
-
-        <p>
-            A favicon request also returned a 403 response during testing.
-            This demonstrated the importance of examining individual browser
-            network requests rather than assuming that every request has the
-            same cause.
-        </p>
-    </section>
-
-    <!-- PROJECT MILESTONES -->
-    <section id="milestones">
-        <h2>13. Project Milestones</h2>
-
-        <div class="timeline">
-
-            <div class="timeline-item">
-                <div class="date">02 August 2026</div>
-                <h3>HTML Resume</h3>
-                <p>
-                    Resume structure completed using HTML.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="date">02 August 2026</div>
-                <h3>CSS Styling</h3>
-                <p>
-                    Resume styling and presentation completed.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="date">02 August 2026</div>
-                <h3>JavaScript Foundation</h3>
-                <p>
-                    JavaScript functionality introduced.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>GitHub Repository</h3>
-                <p>
-                    Source code placed under Git and GitHub version control.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>GitHub Pages</h3>
-                <p>
-                    Frontend deployed during the development phase.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>AWS Cloud Implementation</h3>
-                <p>
-                    AWS infrastructure introduced and deployed.
-                    <span class="status complete">Implemented</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>CloudFront</h3>
-                <p>
-                    CloudFront distribution created and used to deliver the
-                    resume frontend.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>API Gateway</h3>
-                <p>
-                    API endpoint created for the visitor counter.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>AWS Lambda</h3>
-                <p>
-                    Python Lambda backend implemented.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>DynamoDB</h3>
-                <p>
-                    Visitor counter storage implemented.
-                    <span class="status complete">Completed</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>IAM Security Configuration</h3>
-                <p>
-                    IAM and access-control considerations incorporated into
-                    the architecture.
-                    <span class="status progress">Ongoing</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>CloudFormation</h3>
-                <p>
-                    Infrastructure-as-Code introduced and existing resources
-                    brought under CloudFormation management.
-                    <span class="status complete">Implemented</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>CI/CD Automation</h3>
-                <p>
-                    Automation remains an area for further development.
-                    <span class="status progress">In Progress</span>
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <h3>Terraform</h3>
-                <p>
-                    Terraform Infrastructure-as-Code is planned as a future
-                    learning and implementation stage.
-                    <span class="status planned">Planned</span>
-                </p>
-            </div>
-
+        <div class="timeline-item">
+            <div class="date">02 August 2026</div>
+            <h3>CSS Styling</h3>
+            <p>
+                Resume styling and presentation completed.
+                <span class="status complete">Completed</span>
+            </p>
         </div>
-    </section>
 
-    <!-- TECHNICAL STACK -->
-    <section>
-        <h2>14. Technology Stack</h2>
-
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Category</th>
-                        <th>Technology</th>
-                        <th>Purpose</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>Frontend</td>
-                        <td>HTML5</td>
-                        <td>Resume structure and content.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Frontend</td>
-                        <td>CSS3</td>
-                        <td>Styling and responsive presentation.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Frontend</td>
-                        <td>JavaScript</td>
-                        <td>Dynamic functionality and API integration.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Cloud</td>
-                        <td>Amazon S3</td>
-                        <td>Static content storage.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Cloud</td>
-                        <td>Amazon CloudFront</td>
-                        <td>Content delivery and HTTPS.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Serverless</td>
-                        <td>AWS Lambda</td>
-                        <td>Backend visitor-counter processing.</td>
-                    </tr>
-
-                    <tr>
-                        <td>API</td>
-                        <td>Amazon API Gateway</td>
-                        <td>HTTP API endpoint.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Database</td>
-                        <td>Amazon DynamoDB</td>
-                        <td>Visitor-count persistence.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Infrastructure</td>
-                        <td>AWS CloudFormation</td>
-                        <td>Infrastructure as Code.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Security</td>
-                        <td>AWS IAM</td>
-                        <td>Identity and permissions.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Version Control</td>
-                        <td>Git / GitHub</td>
-                        <td>Source control and documentation.</td>
-                    </tr>
-
-                    <tr>
-                        <td>Backend Language</td>
-                        <td>Python / boto3</td>
-                        <td>Lambda implementation.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="timeline-item">
+            <div class="date">02 August 2026</div>
+            <h3>JavaScript Foundation</h3>
+            <p>
+                JavaScript functionality introduced.
+                <span class="status complete">Completed</span>
+            </p>
         </div>
-    </section>
 
-    <!-- PROJECT STRUCTURE -->
-    <section>
-        <h2>15. Project Structure</h2>
+        <div class="timeline-item">
+            <h3>GitHub Repository</h3>
+            <p>
+                Source code placed under Git and GitHub version control.
+                <span class="status complete">Completed</span>
+            </p>
+        </div>
 
-        <pre class="code-block">
-cloud-resume-challenge/
+        <div class="timeline-item">
+            <h3>GitHub Pages</h3>
+            <p>
+                Frontend deployed during the development phase.
+                <span class="status complete">Completed</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>AWS Cloud Implementation</h3>
+            <p>
+                AWS infrastructure introduced and deployed.
+                <span class="status complete">Implemented</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Amazon S3</h3>
+            <p>
+                Static resume files stored in S3.
+                <span class="status complete">Implemented</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>CloudFront</h3>
+            <p>
+                CloudFront distribution created and used to deliver the
+                resume frontend.
+                <span class="status complete">Completed</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>API Gateway</h3>
+            <p>
+                API endpoint created for the visitor counter.
+                <span class="status complete">Completed</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>AWS Lambda</h3>
+            <p>
+                Python Lambda backend implemented.
+                <span class="status complete">Completed</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>DynamoDB</h3>
+            <p>
+                Visitor counter storage implemented.
+                <span class="status complete">Completed</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>CloudFormation</h3>
+            <p>
+                Infrastructure-as-Code introduced and the existing S3 resource
+                brought under CloudFormation management.
+                <span class="status complete">Implemented</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>IAM Security Configuration</h3>
+            <p>
+                IAM and access-control considerations incorporated into
+                the architecture.
+                <span class="status progress">Ongoing</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>CI/CD Automation</h3>
+            <p>
+                Automated deployment remains a future development area.
+                <span class="status progress">In Progress</span>
+            </p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>Terraform</h3>
+            <p>
+                Terraform Infrastructure-as-Code is planned as a future
+                learning and implementation stage.
+                <span class="status planned">Planned</span>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>14. Technology Stack</h2>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Technology</th>
+                    <th>Purpose</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Frontend</td>
+                    <td>HTML5</td>
+                    <td>Resume structure and content.</td>
+                </tr>
+
+                <tr>
+                    <td>Frontend</td>
+                    <td>CSS3</td>
+                    <td>Styling and responsive presentation.</td>
+                </tr>
+
+                <tr>
+                    <td>Frontend</td>
+                    <td>JavaScript</td>
+                    <td>Dynamic functionality and API integration.</td>
+                </tr>
+
+                <tr>
+                    <td>Cloud</td>
+                    <td>Amazon S3</td>
+                    <td>Static content storage.</td>
+                </tr>
+
+                <tr>
+                    <td>Cloud</td>
+                    <td>Amazon CloudFront</td>
+                    <td>Content delivery and HTTPS.</td>
+                </tr>
+
+                <tr>
+                    <td>Serverless</td>
+                    <td>AWS Lambda</td>
+                    <td>Backend visitor-counter processing.</td>
+                </tr>
+
+                <tr>
+                    <td>API</td>
+                    <td>Amazon API Gateway</td>
+                    <td>HTTP API endpoint.</td>
+                </tr>
+
+                <tr>
+                    <td>Database</td>
+                    <td>Amazon DynamoDB</td>
+                    <td>Visitor-count persistence.</td>
+                </tr>
+
+                <tr>
+                    <td>Infrastructure</td>
+                    <td>AWS CloudFormation</td>
+                    <td>Infrastructure as Code.</td>
+                </tr>
+
+                <tr>
+                    <td>Security</td>
+                    <td>AWS IAM</td>
+                    <td>Identity and permissions.</td>
+                </tr>
+
+                <tr>
+                    <td>Version Control</td>
+                    <td>Git / GitHub</td>
+                    <td>Source control and documentation.</td>
+                </tr>
+
+                <tr>
+                    <td>Backend Language</td>
+                    <td>Python / boto3</td>
+                    <td>Lambda implementation.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<section>
+    <h2>15. Project Structure</h2>
+
+    <pre class="code-block">cloud-resume-challenge/
 │
 ├── index.html
 │
@@ -1363,384 +1373,386 @@ cloud-resume-challenge/
 │
 ├── README.html
 │
-└── other project files
-        </pre>
+└── other project files</pre>
 
-        <p>
-            The repository structure separates presentation, JavaScript,
-            infrastructure and documentation. This makes the project easier
-            to understand and provides a foundation for future expansion.
-        </p>
-    </section>
+    <p>
+        The repository structure separates presentation, JavaScript,
+        infrastructure and documentation. This makes the project easier
+        to understand and provides a foundation for future expansion.
+    </p>
+</section>
 
-    <!-- TESTING -->
-    <section>
-        <h2>16. Testing</h2>
+<section>
+    <h2>16. Testing</h2>
 
-        <h3>Frontend Testing</h3>
+    <h3>Frontend Testing</h3>
 
-        <ul>
-            <li>Resume page loaded successfully.</li>
-            <li>CSS styling was verified in the browser.</li>
-            <li>JavaScript functionality was tested.</li>
-            <li>CloudFront delivery was tested.</li>
-        </ul>
+    <ul>
+        <li>Resume page loaded successfully.</li>
+        <li>CSS styling was verified in the browser.</li>
+        <li>JavaScript functionality was tested.</li>
+        <li>CloudFront delivery was tested.</li>
+    </ul>
 
-        <h3>Visitor Counter Testing</h3>
+    <h3>Visitor Counter Testing</h3>
 
-        <ul>
-            <li>Browser requests were tested against API Gateway.</li>
-            <li>CORS behavior was tested.</li>
-            <li>Lambda execution was tested.</li>
-            <li>DynamoDB visitor-count updates were tested.</li>
-            <li>Returned visitor counts were verified in the browser.</li>
-        </ul>
+    <ul>
+        <li>Browser requests were tested against API Gateway.</li>
+        <li>CORS behavior was tested.</li>
+        <li>Lambda execution was tested.</li>
+        <li>DynamoDB visitor-count updates were tested.</li>
+        <li>Returned visitor counts were verified in the browser.</li>
+    </ul>
 
-        <h3>Infrastructure Testing</h3>
+    <h3>Infrastructure Testing</h3>
 
-        <ul>
-            <li>CloudFormation template validation was performed.</li>
-            <li>CloudFormation stack events were inspected after failures.</li>
-            <li>Stack resources were verified using the AWS CLI.</li>
-            <li>Existing S3 infrastructure was successfully imported into CloudFormation.</li>
-        </ul>
-    </section>
+    <ul>
+        <li>CloudFormation template validation was performed.</li>
+        <li>CloudFormation stack events were inspected after failures.</li>
+        <li>Stack resources were verified using the AWS CLI.</li>
+        <li>Existing S3 infrastructure was successfully imported into CloudFormation.</li>
+    </ul>
+</section>
 
-    <!-- LESSONS -->
-    <section id="lessons">
-        <h2>17. Key Lessons Learned</h2>
+<section id="lessons">
+    <h2>17. Key Lessons Learned</h2>
 
-        <h3>1. Cloud architecture is interconnected</h3>
+    <h3>1. Cloud architecture is interconnected</h3>
 
-        <p>
-            A seemingly simple website can involve several services. A problem
-            in one layer can affect another layer, which makes understanding
-            the complete request path important.
-        </p>
+    <p>
+        A seemingly simple website can involve several services. A problem
+        in one layer can affect another layer, which makes understanding
+        the complete request path important.
+    </p>
 
-        <h3>2. Infrastructure as Code changes how infrastructure is managed</h3>
+    <h3>2. Infrastructure as Code changes how infrastructure is managed</h3>
 
-        <p>
-            CloudFormation provided practical experience with defining and
-            managing infrastructure through code rather than relying entirely
-            on the AWS Console.
-        </p>
+    <p>
+        CloudFormation provided practical experience with defining and
+        managing infrastructure through code rather than relying entirely
+        on the AWS Console.
+    </p>
 
-        <h3>3. Troubleshooting is a core cloud skill</h3>
+    <h3>3. Troubleshooting is a core cloud skill</h3>
 
-        <p>
-            Authentication problems, region configuration, CloudFormation
-            rollback events, CORS errors and caching problems demonstrated the
-            importance of methodical troubleshooting.
-        </p>
+    <p>
+        Authentication problems, region configuration, CloudFormation
+        rollback events, CORS errors and caching problems demonstrated the
+        importance of methodical troubleshooting.
+    </p>
 
-        <h3>4. Serverless architecture can provide significant functionality</h3>
+    <h3>4. Serverless architecture can provide significant functionality</h3>
 
-        <p>
-            The visitor counter did not require a traditional server. API
-            Gateway, Lambda and DynamoDB were sufficient to provide a functional
-            backend.
-        </p>
+    <p>
+        The visitor counter did not require a traditional server. API
+        Gateway, Lambda and DynamoDB were sufficient to provide a functional
+        backend.
+    </p>
 
-        <h3>5. Security must be considered from the beginning</h3>
+    <h3>5. Security must be considered from the beginning</h3>
 
-        <p>
-            IAM permissions, S3 access controls, CORS and service-to-service
-            permissions all form part of the application's security posture.
-        </p>
+    <p>
+        IAM permissions, S3 access controls, CORS and service-to-service
+        permissions all form part of the application's security posture.
+    </p>
 
-        <h3>6. Documentation is part of the project</h3>
+    <h3>6. Documentation is part of the project</h3>
 
-        <p>
-            A professional cloud project should explain not only what was
-            deployed, but why it was designed that way and what problems were
-            encountered along the way.
-        </p>
-    </section>
+    <p>
+        A professional cloud project should explain not only what was
+        deployed, but why it was designed that way and what problems were
+        encountered along the way.
+    </p>
+</section>
 
-    <!-- CLOUD SKILLS -->
-    <section>
-        <h2>18. Cloud Skills Demonstrated</h2>
+<section id="skills">
+    <h2>18. Cloud Skills Demonstrated</h2>
 
-        <div class="cards">
+    <div class="cards">
 
-            <div class="card">
-                <h3>Cloud Architecture</h3>
-                <p>
-                    Designed a multi-service AWS serverless architecture.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Compute</h3>
-                <p>
-                    Used AWS Lambda for serverless application logic.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Storage</h3>
-                <p>
-                    Used Amazon S3 for static content storage.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Networking / Delivery</h3>
-                <p>
-                    Used CloudFront and API Gateway as application access layers.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Databases</h3>
-                <p>
-                    Used DynamoDB as the application's NoSQL persistence layer.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Security</h3>
-                <p>
-                    Applied IAM and access-control principles.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>Infrastructure as Code</h3>
-                <p>
-                    Introduced AWS CloudFormation for infrastructure management.
-                </p>
-            </div>
-
-            <div class="card">
-                <h3>DevOps Foundations</h3>
-                <p>
-                    Used Git, GitHub and CLI-based AWS workflows.
-                </p>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- COST -->
-    <section>
-        <h2>19. Cost Awareness</h2>
-
-        <p>
-            Cost management was considered throughout the project. The
-            architecture makes use of serverless and managed AWS services,
-            allowing resources to be used without maintaining traditional
-            servers.
-        </p>
-
-        <p>
-            An AWS budget was also created to monitor project expenditure.
-        </p>
-
-        <div class="callout">
-            <strong>Cloud engineering lesson:</strong>
-            Understanding the technical architecture is only part of designing
-            cloud solutions. Cost awareness and resource management are equally
-            important skills.
-        </div>
-    </section>
-
-    <!-- FUTURE -->
-    <section id="future">
-        <h2>20. Future Improvements</h2>
-
-        <p>
-            The project provides a foundation that can be expanded as additional
-            cloud engineering skills are developed.
-        </p>
-
-        <ul>
-            <li>Complete further IAM hardening and least-privilege refinement.</li>
-            <li>Introduce automated CI/CD deployment.</li>
-            <li>Expand CloudFormation coverage across additional resources.</li>
-            <li>Recreate infrastructure using Terraform.</li>
-            <li>Improve monitoring and operational visibility where appropriate.</li>
-            <li>Continue improving documentation.</li>
-            <li>Use the project as a practical foundation for further AWS study.</li>
-        </ul>
-
-        <p>
-            Terraform is intentionally listed as a future stage rather than
-            being represented as an already completed part of this project.
-        </p>
-    </section>
-
-    <!-- CAREER VALUE -->
-    <section>
-        <h2>21. Portfolio and Career Value</h2>
-
-        <p>
-            The purpose of this project extends beyond completing the Cloud
-            Resume Challenge. It provides evidence of practical cloud skills
-            that can be demonstrated during applications and interviews.
-        </p>
-
-        <p>
-            Instead of simply listing AWS services on a CV, the project provides
-            an example of how those services were combined into a working
-            application.
-        </p>
-
-        <h3>Examples of Experience Demonstrated</h3>
-
-        <ul>
-            <li>Building and deploying an AWS-hosted application.</li>
-            <li>Working with serverless architecture.</li>
-            <li>Using APIs and event-driven backend processing.</li>
-            <li>Working with NoSQL databases.</li>
-            <li>Managing infrastructure with CloudFormation.</li>
-            <li>Using Git and GitHub.</li>
-            <li>Working with the AWS CLI.</li>
-            <li>Diagnosing cloud deployment problems.</li>
-            <li>Understanding cloud security fundamentals.</li>
-            <li>Considering cloud costs.</li>
-        </ul>
-    </section>
-
-    <!-- FINAL STATUS -->
-    <section>
-        <h2>22. Project Status</h2>
-
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Component</th>
-                        <th>Status</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td>HTML Resume</td>
-                        <td><span class="status complete">Completed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>CSS Styling</td>
-                        <td><span class="status complete">Completed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>JavaScript</td>
-                        <td><span class="status complete">Completed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>GitHub Repository</td>
-                        <td><span class="status complete">Completed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>GitHub Pages</td>
-                        <td><span class="status complete">Completed</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Amazon S3</td>
-                        <td><span class="status complete">Implemented</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Amazon CloudFront</td>
-                        <td><span class="status complete">Implemented</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>API Gateway</td>
-                        <td><span class="status complete">Implemented</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>AWS Lambda</td>
-                        <td><span class="status complete">Implemented</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>DynamoDB</td>
-                        <td><span class="status complete">Implemented</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>CloudFormation</td>
-                        <td><span class="status complete">Implemented</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>IAM Security</td>
-                        <td><span class="status progress">Ongoing</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>CI/CD</td>
-                        <td><span class="status progress">In Progress</span></td>
-                    </tr>
-
-                    <tr>
-                        <td>Terraform</td>
-                        <td><span class="status planned">Planned</span></td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="card">
+            <h3>Cloud Architecture</h3>
+            <p>
+                Designed a multi-service AWS serverless architecture.
+            </p>
         </div>
 
-        <div class="success-callout callout">
-            <strong>Overall:</strong>
-            The core Cloud Resume Challenge has been implemented as a working
-            AWS cloud project. Remaining items represent extensions and future
-            improvements rather than prerequisites for the core project.
+        <div class="card">
+            <h3>Compute</h3>
+            <p>
+                Used AWS Lambda for serverless application logic.
+            </p>
         </div>
-    </section>
 
-    <!-- CONCLUSION -->
-    <section>
-        <h2>23. Conclusion</h2>
+        <div class="card">
+            <h3>Storage</h3>
+            <p>
+                Used Amazon S3 for static content storage.
+            </p>
+        </div>
 
-        <p>
-            The Cloud Resume Challenge became a practical introduction to
-            designing and operating a real AWS cloud application.
-        </p>
+        <div class="card">
+            <h3>Networking / Delivery</h3>
+            <p>
+                Used CloudFront and API Gateway as application access layers.
+            </p>
+        </div>
 
-        <p>
-            The completed project combines frontend development, cloud storage,
-            content delivery, APIs, serverless compute, NoSQL storage,
-            infrastructure as code, IAM, Git and troubleshooting into a single
-            portfolio project.
-        </p>
+        <div class="card">
+            <h3>Databases</h3>
+            <p>
+                Used DynamoDB as the application's NoSQL persistence layer.
+            </p>
+        </div>
 
-        <p>
-            The project also establishes a strong foundation for progressing
-            into additional areas of cloud engineering, DevOps, Infrastructure
-            as Code, cloud security and eventually cloud governance and
-            optimization.
-        </p>
+        <div class="card">
+            <h3>Security</h3>
+            <p>
+                Applied IAM and access-control principles.
+            </p>
+        </div>
 
-        <p>
-            Most importantly, the project demonstrates the ability to learn
-            through implementation: building something, encountering problems,
-            investigating the underlying cause, correcting the configuration
-            and documenting the result.
-        </p>
-    </section>
+        <div class="card">
+            <h3>Infrastructure as Code</h3>
+            <p>
+                Introduced AWS CloudFormation for infrastructure management.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>DevOps Foundations</h3>
+            <p>
+                Used Git, GitHub and CLI-based AWS workflows.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section>
+    <h2>19. Cost Awareness</h2>
+
+    <p>
+        Cost management was considered throughout the project. The architecture
+        makes use of serverless and managed AWS services, allowing resources to
+        be used without maintaining traditional servers.
+    </p>
+
+    <p>
+        An AWS budget was also created to monitor project expenditure and help
+        maintain awareness of ongoing cloud costs.
+    </p>
+
+    <div class="callout">
+        <strong>Cloud engineering lesson:</strong>
+        Understanding the technical architecture is only part of designing
+        cloud solutions. Cost awareness and resource management are equally
+        important skills.
+    </div>
+</section>
+
+<section id="future">
+    <h2>20. Future Improvements</h2>
+
+    <p>
+        The project provides a foundation that can be expanded as additional
+        cloud engineering skills are developed.
+    </p>
+
+    <ul>
+        <li>Complete further IAM hardening and least-privilege refinement.</li>
+        <li>Introduce automated CI/CD deployment.</li>
+        <li>Expand CloudFormation coverage across additional resources.</li>
+        <li>Recreate infrastructure using Terraform.</li>
+        <li>Improve monitoring and operational visibility where appropriate.</li>
+        <li>Continue improving documentation.</li>
+        <li>Use the project as a practical foundation for further AWS study.</li>
+    </ul>
+
+    <p>
+        Terraform is intentionally listed as a future stage rather than being
+        represented as an already completed part of this project.
+    </p>
+</section>
+
+<section>
+    <h2>21. Portfolio and Career Value</h2>
+
+    <p>
+        The purpose of this project extends beyond completing the Cloud Resume
+        Challenge. It provides evidence of practical cloud skills that can be
+        demonstrated during applications and interviews.
+    </p>
+
+    <p>
+        Instead of simply listing AWS services on a CV, the project provides
+        an example of how those services were combined into a working
+        application.
+    </p>
+
+    <h3>Examples of Experience Demonstrated</h3>
+
+    <ul>
+        <li>Building and deploying an AWS-hosted application.</li>
+        <li>Working with serverless architecture.</li>
+        <li>Using APIs and event-driven backend processing.</li>
+        <li>Working with NoSQL databases.</li>
+        <li>Managing infrastructure with CloudFormation.</li>
+        <li>Using Git and GitHub.</li>
+        <li>Working with the AWS CLI.</li>
+        <li>Diagnosing cloud deployment problems.</li>
+        <li>Understanding cloud security fundamentals.</li>
+        <li>Considering cloud costs.</li>
+    </ul>
+</section>
+
+<section id="status">
+    <h2>22. Project Status</h2>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Component</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>HTML Resume</td>
+                    <td><span class="status complete">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>CSS Styling</td>
+                    <td><span class="status complete">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>JavaScript</td>
+                    <td><span class="status complete">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>GitHub Repository</td>
+                    <td><span class="status complete">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>GitHub Pages</td>
+                    <td><span class="status complete">Completed</span></td>
+                </tr>
+
+                <tr>
+                    <td>Amazon S3</td>
+                    <td><span class="status complete">Implemented</span></td>
+                </tr>
+
+                <tr>
+                    <td>Amazon CloudFront</td>
+                    <td><span class="status complete">Implemented</span></td>
+                </tr>
+
+                <tr>
+                    <td>Amazon API Gateway</td>
+                    <td><span class="status complete">Implemented</span></td>
+                </tr>
+
+                <tr>
+                    <td>AWS Lambda</td>
+                    <td><span class="status complete">Implemented</span></td>
+                </tr>
+
+                <tr>
+                    <td>Amazon DynamoDB</td>
+                    <td><span class="status complete">Implemented</span></td>
+                </tr>
+
+                <tr>
+                    <td>AWS CloudFormation</td>
+                    <td><span class="status complete">Implemented</span></td>
+                </tr>
+
+                <tr>
+                    <td>IAM Security</td>
+                    <td><span class="status progress">Ongoing</span></td>
+                </tr>
+
+                <tr>
+                    <td>CI/CD</td>
+                    <td><span class="status progress">In Progress</span></td>
+                </tr>
+
+                <tr>
+                    <td>Terraform</td>
+                    <td><span class="status planned">Planned</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="success-callout callout">
+        <strong>Overall Status:</strong>
+        The core Cloud Resume Challenge has been implemented as a working
+        AWS cloud project. Remaining items represent extensions and future
+        improvements rather than prerequisites for the core project.
+    </div>
+</section>
+
+<section>
+    <h2>23. Conclusion</h2>
+
+    <p>
+        The Cloud Resume Challenge became a practical introduction to
+        designing and operating a real AWS cloud application.
+    </p>
+
+    <p>
+        The completed project combines frontend development, cloud storage,
+        content delivery, APIs, serverless compute, NoSQL storage,
+        infrastructure as code, IAM, Git and troubleshooting into a single
+        portfolio project.
+    </p>
+
+    <p>
+        The project also establishes a strong foundation for progressing into
+        additional areas of cloud engineering, DevOps, Infrastructure as Code,
+        cloud security and eventually cloud governance and optimization.
+    </p>
+
+    <p>
+        Most importantly, the project demonstrates the ability to learn
+        through implementation: building something, encountering problems,
+        investigating the underlying cause, correcting the configuration
+        and documenting the result.
+    </p>
+
+    <div class="success-callout callout">
+        <strong>Live Project:</strong>
+        <a
+            href="https://d2kecljl2gk63a.cloudfront.net/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            View the AWS Cloud Resume
+        </a>
+    </div>
+</section>
 
 </main>
 
 <footer>
     <div class="container">
         <p><strong>AWS Cloud Resume Challenge</strong></p>
-        <p>Comprehensive Project Documentation</p>
+        <p>Comprehensive Technical Project Documentation</p>
         <p>Built with HTML, CSS, JavaScript and AWS</p>
 
-        <a class="back-top" href="#top">Back to top ↑</a>
+        <a class="back-top" href="#top">
+            Back to top ↑
+        </a>
     </div>
 </footer>
 
 </body>
 </html>
-
