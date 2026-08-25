@@ -1,9 +1,13 @@
 # Cloud Resume Challenge — AWS
 
 ![AWS](https://img.shields.io/badge/AWS-Cloud%20Resume%20Challenge-orange?logo=amazon-aws)
+
 ![HTML](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+
 ![CSS](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+
 ![CloudFormation](https://img.shields.io/badge/AWS%20CloudFormation-IaC-orange?logo=amazon-aws)
 
 ## Project Overview
@@ -19,7 +23,14 @@ The goal was not only to build a resume website, but to gain hands-on experience
 ## Live Project
 
 🌐 **Live Resume:**  
+
 [View the Cloud Resume](https://d2kecljl2gk63a.cloudfront.net/)
+
+## 📚 Comprehensive Technical Documentation
+
+The complete technical documentation for this project is available here:
+
+👉 **[View the Comprehensive AWS Cloud Resume Documentation](https://cronos99-cell.github.io/cloud-resume-challenge/documentation/README.html)**
 
 > The website is delivered through Amazon CloudFront using HTTPS.
 
